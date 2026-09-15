@@ -1,0 +1,128 @@
+schema_version: rdk-patrol-final/v1
+
+system:
+  timezone: Asia/Shanghai
+  target_fps: 15.0
+  latest_frame_only: true
+  high_precision_mode: true
+  status_interval_seconds: 1.0
+  health_path: ../runtime/status/health.json
+  max_consecutive_inference_failures: 10
+
+camera:
+  topic: /image_combine_jpeg
+  message_type: auto
+  combined_layout: vertical
+  detection_view: bottom
+  auxiliary_view: top
+  rotation: ccw90
+  stale_after_seconds: 1.0
+  discovery_timeout_seconds: 8.0
+
+model:
+  hbm_path: ../models/hbm/patrol_v2_yolo11s_static_640x320_rect_rgb_int8.hbm
+  metadata_path: ../models/hbm/model_metadata.yaml
+  classes: [person, vehicle, trash_bin, garbage, fire, smoke]
+  input_height: 640
+  input_width: 320
+  input_format: rgb_i8_centered
+  nms_iou: 0.50
+  confidence:
+    person: 0.45
+    vehicle: 0.30
+    fire: 0.55
+    # These outputs are unused by the confirmed rules. Suppressing them in
+    # decoding avoids accidental use: trash is reviewed by MiniMax; smoke is
+    # explicitly outside the fire rule.
+    trash_bin: 1.0
+    garbage: 1.0
+    smoke: 1.0
+
+rules:
+  vehicle:
+    event_name: 车辆违停
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    require_stationary_consistency: true
+  night_people:
+    person_event_name: 夜间人员逗留
+    crowd_event_name: 夜间人群聚集
+    active_time_windows:
+      - ["22:00", "06:00"]
+    person_dwell_seconds: 5.0
+    crowd_min_count: 3
+    crowd_dwell_seconds: 5.0
+    track_lost_grace_seconds: 1.0
+    rearm_empty_seconds: 30.0
+  flame:
+    event_name: 明火报警
+    confirmation_seconds: 2.0
+    repeat_alarm_seconds: 600.0
+    clear_absence_seconds: 600.0
+    min_box_width_px: 24
+    min_box_height_px: 24
+    min_box_area_px: 576
+    suppression_zones: []
+  trash:
+    event_name: 垃圾桶已满
+    point_cooldown_seconds: 300.0
+    best_frame_window_seconds: 5.0
+
+localization:
+  points_path: points.yaml
+  tag_family: tag36h11
+  tag_priority: true
+  required_stable_frames: 3
+  fingerprint_fallback: true
+  point_hold_seconds: 5.0
+  scan_interval_seconds: 0.10
+  context_max_age_seconds: 2.0
+
+stereo:
+  enabled: true
+  calibration_path: stereo_gs130w.yaml
+  compute_only_for_flame_candidates: true
+  compute_interval_seconds: 0.5
+  max_result_age_seconds: 1.0
+
+minimax:
+  enabled: true
+  base_url: https://api.minimaxi.com/v1
+  model: MiniMax-M3
+  api_key_env: MINIMAX_API_KEY
+  timeout_seconds: 2.0
+  retry_interval_seconds: 10.0
+  service_tier: priority
+  image_detail: low
+  max_long_side_pixel: 960
+  jpeg_quality: 85
+  queue_dir: ../runtime/review_queue
+
+recording:
+  enabled: true
+  fps: 15.0
+  segment_seconds: 300.0
+  retention_hours: 72.0
+  raw_enabled: true
+  annotated_enabled: true
+  codec: mp4v
+  minimum_free_gb: 20.0
+  output_dir: ../runtime/videos
+  queue_capacity: 32
+
+alarms:
+  output_dir: ../runtime/alarms
+  jpeg_quality: 92
+  font_path: ../assets/fonts/NotoSansSC-VF.ttf
+  ding_talk_enabled: false
+
+web:
+  enabled: true
+  bind: 0.0.0.0
+  port: 8081
+  read_only: true
+  authentication: false
+
+navigation:
+  adapter: null
+  hold_seconds: 5.0

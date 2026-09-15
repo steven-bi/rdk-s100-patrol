@@ -1,0 +1,3908 @@
+schema_version: vehicle-parking-site-rois/v1
+camera:
+  id: front
+  topic: /image_combine_jpeg
+  view: bottom
+  rotation: ccw90
+runtime:
+  event_name: 车辆违停
+  vehicle_class: vehicle
+  record_fps: 15
+  process_interval: 0.0667
+  infer_interval: 0.0667
+  input_height: 640
+  input_width: 320
+  input_format: rgb_i8_centered
+  hbm_backend: hbm_runtime
+  conf: 0.15
+  iou: 0.5
+  dwell_seconds: 2
+  cooldown_seconds: 300
+  detection_ttl: 1.0
+  track_iou_threshold: 0.1
+  track_center_distance_ratio: 0.85
+  track_max_missed: 12
+  track_max_age_seconds: 30.0
+  scene_match_enabled: true
+  scene_match_min_score: 0.6
+  scene_match_min_margin: 0.08
+  scene_match_hold_seconds: 5
+  scene_match_activation_frames: 3
+  scene_geometry_enabled: true
+  scene_geometry_required: true
+  scene_geometry_min_matches: 8
+  scene_geometry_min_inliers: 6
+  scene_geometry_min_inlier_ratio: 0.35
+  scene_geometry_max_reprojection_error: 8.0
+  image_quality_enabled: true
+  image_quality_blur_min: 20.0
+  image_quality_brightness_min: 25.0
+  image_quality_brightness_max: 235.0
+  image_quality_clipped_ratio_max: 0.75
+  stop_candidate_seconds: 0.5
+  debug_report_interval_seconds: 1.0
+points:
+- point_id: no_parking_01
+  location: no_parking_zone_01
+  enabled: true
+  rois:
+  - id: no_parking_zone_01
+    name: no_parking_zone_01
+    polygon:
+    - - 162
+      - 625
+    - - 12
+      - 699
+    - - 177
+      - 997
+    - - 630
+      - 698
+    - - 483
+      - 637
+    - - 173
+      - 625
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f003249
+    anchor_frame_index: 3249
+    anchor_second: 216.6
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_01_f003249_t000216_600.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: a390a3b6cde19396
+      hsv_hist:
+      - 0.278262
+      - 0.166484
+      - 0.001426
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.016367
+      - 0.018711
+      - 0.003887
+      - 0.000527
+      - 7.8e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.014316
+      - 0.010566
+      - 0.00375
+      - 5.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.017793
+      - 0.009375
+      - 0.000156
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.127559
+      - 0.085039
+      - 0.013223
+      - 0.000781
+      - 5.9e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.143379
+      - 0.003184
+      - 0.000625
+      - 0.000176
+      - 2.0e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.008809
+      - 0.000508
+      - 0.000215
+      - 9.8e-05
+      - 0.0
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.072656
+      - 0.001309
+      - 0.000273
+      - 9.8e-05
+      - 5.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 92
+        descriptors:
+        - 5cb59abed3c437cdb801e9087ef72950b2fbfb4213839a6ff1e50f0ba873a712
+        - 60217b6860cc7150235d640917974179609835580a52b210d7a9706d30806672
+        - c39f675cea126db6f95a76fc1826967726c67deef15aa545363ae0ce2fa4627d
+        - add3f967bc0f77bd67ecb70cd75198301c746e6ed929793aefcd25146abac673
+        - 7d71bde72d4f57bc6bfcae0dd77d0b1290c45d6ed821793cf1db6534c8bb4673
+        - 2031734960cd6150635d64081297e43d289802580372b2504798506c538046f0
+        - 39a9763c4f9d5066e911ec0d2e9816b6a2e2e00dc62bb6e132fb500b7b0cea8e
+        - 6ae8d35e59d020e6fb11e44828d6a4f5c4fbeac0634ba2f5173a520b5204aeac
+        - 21f7734f504fe77d55a0694a7315a4b47cdc026ac9ba3d3f358c04045b9bc2bc
+        - b78c94b8e9f950cbfb3320180eb26adfa303e410364d0a979bd3517fd0458b86
+        - 25b7504bdcbfcafc57c8f94cf3689ca41cea56ff9fba5f7f2e1c05785b8bca84
+        - 2cb0b1ea4d4d497813efe50cd2d5591c5c9c333c8936fb825d9ec13cd2aa56f2
+        - bc2f7341d5dbe76175a4fa42634095b478e8427a79ba652e3fcc8540638bc6a4
+        - 5d64eb4516626f1170e2de82513f917276fc7daea9d0b54af7afef80a7f37768
+        - 27e2e00b7c9bcadc5775f1cdc348de8459c843ff9e365fb32e5e857cdf9fdad4
+        - 21c57141740fe7bd7d207e68d3519c341e98166ac9b06d1f258c2504779ad2a8
+        - e39feb55e610ad37786a76f638ae967d276f338cf1dea443562afea84df0e3fd
+        - bdc57141d65be6ed5520fb4a53489ca4389842eaf9b86d9f25cc054477aad4a4
+        - 2d39be67e82e7fb8e2ed7e0cf773037094ff746e99b8fb3cefed2500e8f3c3fb
+        - fdff3165b48f47b975ec7e4cff5590351cfc146ef9bc793efbf925c062bac671
+        - e39e853fa97994afde7b807de638038b8942ea07f76d4b33a4725d33d85c995f
+        - a0a47943d4efe3f554257d1853359435191a0238b1ba791f6d8f2140f1cac6a8
+        - d07dbf64924e5735e0e82a4877370133a4777d68e1c9b10ef9aa25106070877b
+        - 65a4d143f93f4a9e7bfb294cd272dcb4d94e703e9f72fb332f9c857ccaf3daa4
+        - 531d4fada2266d332d415ae6dd26927266c73fad959835ccb4eeeac0ace6a175
+        - d6a696b0ebb930c7fb3320788efa64dfa3abe411364f8ad698d65f6fd0448f87
+        - ad8c975ecdb7c4a7dc936350c2f834ebc9626a0a75ef5aae2dba5642d878d88c
+        - 82b696b2faa9b4cffa3760fd8eea6c19a70be211375e8e539c165f6f9840ab9f
+        - 32ff7e5edb9dd6e6ff0bf84d2ae82790adfbc641eeeb12ff3b1e142b595d6b9f
+        - bffa601bdd1fcedc57bc90cfc3cc5f8cddc8d7f7fe76cfb23e50a5fc77bfdad5
+        - a020ff5974efe1537f5d74101015a4392f180218a3fc3055479a3060d18866f0
+        - 29fd7745751f46377dea7e4cba1594b594fc546ee9f871fda7fb65066ab84239
+        - 8d5ebf5ea87f87bfdcde667cf2e4af6b1166e82bf1e52f2a61237511d879dd7b
+        - 73f9165a4bd490e7eb19e4082ada26f4e9b3fa80572b96f53378127b5b04eb0e
+        - 6de9a966d9cc479933e9ac08f3f7493659fe70de5b4afa23ef9d85788af2c232
+        - ad7ad14f6d1dca585bea754c5bcdddbcdcdc367acb36fbb307d8a13c5bab5ab5
+        - a58c971d8deea4a7de9b6250e6f024efc1626a0075ed42b30df2575bd078c984
+        - cc9ebc5faa7e95bff6dfe675f375836b1566e80ef5ecfb2a6bef7511cafded7b
+        - 5abba3b9bbe0b9c7ae055ab38daf6042e73fff91121982e6fdf49ecb9444a7fb
+        - fd9cf77db97e56b777ffe6b56b7c87ffd576ec26bdfc7d2febff7593eaf5cc5f
+        - ede29553ed3f46987bbba758d273ddfe91c47c7eb954fb220fda45748afbda24
+        - 3515506c390f427811a8f14853532995d8b8446a6923509cb2d921387bab4280
+        - c12eed45a20e6f3776ea6ad4f325d172376e6c0ce1dcf50aedae7580e8f04079
+        - cd79b5a7ac2e4798aefb835dd775590b85447d7fb9e1db28edd265148afb9133
+        - 226d439ed1c06fe6bb46e8892ce72554f9eb03c6638b9aff3936842a125766ce
+        - 0b7feb57f2baafd77acb5ef6bdac97293f6f179de3f8a46a662f3e80cdf0e3f9
+        - bd5efe7ea97f56bf91eebefd5b7d9fbb9f77fd27fde53b2aebff6597effdce53
+        - e66ce496ed79c488cbf6b5abc3685f8f49c4e9776c66efa03e52dd3dc77fded6
+        - 2d7e704d6c3feef859ea744cdb489fbddccc566eed726cbc26dbe1bc5fff5a85
+        - a2fd3a1ed98d96e6df03f81f2ce82610edfbe241e62b12ff78161c3bd958eb9f
+        - 89feec77e23efdbf32fe36f5796d9a3b175671aef1dc7f3f6ecf7584eff4cbd9
+        - 29997645659f6437eda87e4c3a3194b484b6566cc1b871dd27ff44024abacaad
+        - a4e9fd53d4efe7d47e35651052558c3d195a425a33f0793e6d8e2040c19bc6a0
+        - dbd62e2d3bb018afac5d8eb7ed8ebec3e787fd85be0987d7e2e1bac70c04a95f
+        - 2eeb60a1ec53ceef07b49c8b83ccd784ddddd7f75e6aceb43e51cdfd57bededc
+        - bdf6ee73f6366dbf70f77697596f9a7b3fce15bef3fcbd2f6eebf5c4eff0faf9
+        - c734cf1bdaf4a90fbedf4f95f0e6df6f37276a9cb75cbf460c26fec88844a1f4
+        - 40ba9edd88c8a5a7fe9fc664b0e2a44fc1766a981be9f3318ca2f7518878ad28
+        - 53896bade2c66f352c405e829d36b27466ff3fcdd198b5c0f569aac024a2a168
+        - 53fb3a1a2b9090c5eb19f8292ed82610a83be641c62b82f1b0341afb5906ab8f
+        - 7e7ce4a5cd7d96ef83fe9cbfc27c5f8e49d6fd235c67ffa23f57ddbfe77fde56
+        - c35a871e0bb4ac87bf5b83f5ec86efcfe547e89667458fe39232de8a8a54a95d
+        - 808e9fdf8ce6a5a7febbe252e6b0e46f49766a0831eddb6b0da25702c978a12c
+        - a47dbf53a0efa7c47e336910f3758d29197a425a73f079222d8a6550c15bc7b0
+        - 2d6b640d6c1fcefc4be47ccfeb68979558cc46efcc326dbd365bc53557ff5acc
+        - fffcf47fab765ebf39fab4b97f7e17bb97f7fd27edcd79efebff5d93e7f58f5f
+        - 5c9a9e7511da603376ffe635ebe583df7164ec082cfdb10ccafb7541eaa46c56
+        - 4d7d95e7ad2e47982bba8b48de7149ff91567c7e5960db28adda45348afbc321
+        - 82bf85b2d8ecbccfbafb98dda4ab500b890b5b95364fd263ec16fff88c44b3db
+        - 489a9f7f29da31b6b6dd66a4e3f7a2ef416ee84837d8f32dcee37741caac6c5f
+        - bd47506f780f42785128f96d734b8190d8a8446eec32481fe2d9213c7bbb4a80
+        - 7eb5a0a4cd7d96ef83fe983bc2fc4f9eddd7fd217c63db82bf57cdbfc77c9ed7
+        - fe75e482cf7b96cc91f6b59f427c5f8f59c4cb776c67fda23342453fe77fded6
+        - 8ccdbf73a46fe7bc76f27b00d3758921195a6a7a7bf07b3e6d8e6504c0fbc420
+        - 89fe7d57a2abbfb77efe36fcf16d9f2b0756510ee3fc6d3f6e0b75b04dd987f9
+        - 69afe004fd3f54376bedbe4daa38d6b689ae4c3cdcfae00d7efd3472c2ecda4f
+        - c1181fd860c42912ae514050b597e07886393a1c031cb251c5b87ae8188021b9
+        - 41a89fb568892948aeb14240f5d2487ba2357ad9035987519ca27b6888200308
+        - faed125459dd54e6b3a7a4182e91429528fec8406e6f92efbbd1143b629cca0e
+        - bf7d7c36a93fdebe99febcfd7f7d9fbb9ff3d567ed673abae3db6dbfcefd8b53
+        - 31a96bc754d26f646180ee021193b07078ec16e8589aa54837eca28125a272a8
+        - 43a997b66a8d388caef182c8fdf640fba7f77bd5174bdff19cfa5f788c002b18
+        - 59209ef5039e2903eeb946009d83c0ff223c6c1802d8a311cde37a41a2002928
+        - a2acb0bad9a59def9f17f81d26e87e00cdab63057e6edaf7791e5e7bd95ce2da
+        - 32ec1e5849dd54e7a917ec082a992696a9b2c2004eabb2f533fe547b430cee8e
+        - e5b0fd56e85c519973ffa518d355ce3b15d4fc3ebb66fb034feb757cc3a3c671
+        - b6a5bc729dfd94cffbb3a8192efd5c9b89dbd9113e6bdab0bbd9157fc158df8a
+        - 46f0949aa9259ece1fbb9959ccfa6dcad75bfb531643dbf0b9504fff907fa987
+        - 6e6de0a4dd71cecf8bf59c8bc3ec5f9e59cef3f30e62deb0be518dbd977cded6
+        - b95b6e6c3c974b78e5c8f7e77bc5bf747ca4fdeec9a72d9dd2f9a1907faf7071
+        - 77db6f4e3c165bf0a5ccf7ef736db7317ef47feec9e33fed52fbe1906fab7279
+        - 057efbefee23efd816e279c655eff9287f6d37eec1739e38f08defacfdfb23b1
+        points:
+        - - 0.78125
+          - 0.43125
+        - - 0.79375
+          - 0.475
+        - - 0.69375
+          - 0.46875
+        - - 0.61875
+          - 0.428125
+        - - 0.60625
+          - 0.434375
+        - - 0.78125
+          - 0.475
+        - - 0.7125
+          - 0.425
+        - - 0.7
+          - 0.428125
+        - - 0.575
+          - 0.4625
+        - - 0.325
+          - 0.440625
+        - - 0.57
+          - 0.46125
+        - - 0.6125
+          - 0.446875
+        - - 0.648
+          - 0.189
+        - - 0.3125
+          - 0.240625
+        - - 0.567
+          - 0.459
+        - - 0.645
+          - 0.18
+        - - 0.69
+          - 0.46875
+        - - 0.648
+          - 0.18
+        - - 0.60625
+          - 0.421875
+        - - 0.615
+          - 0.4275
+        - - 0.4425
+          - 0.45
+        - - 0.61875
+          - 0.28125
+        - - 0.435
+          - 0.4575
+        - - 0.555
+          - 0.45
+        - - 0.33125
+          - 0.228125
+        - - 0.3225
+          - 0.4425
+        - - 0.425
+          - 0.440625
+        - - 0.324
+          - 0.441
+        - - 0.3
+          - 0.4125
+        - - 0.5616
+          - 0.459
+        - - 0.76875
+          - 0.475
+        - - 0.612
+          - 0.4275
+        - - 0.441
+          - 0.45
+        - - 0.6975
+          - 0.4275
+        - - 0.55
+          - 0.45
+        - - 0.6075
+          - 0.45
+        - - 0.42
+          - 0.4425
+        - - 0.432
+          - 0.4482
+        - - 0.41875
+          - 0.253125
+        - - 0.41472
+          - 0.44712
+        - - 0.5475
+          - 0.4425
+        - - 0.6875
+          - 0.18125
+        - - 0.43125
+          - 0.45625
+        - - 0.5625
+          - 0.434375
+        - - 0.2875
+          - 0.40625
+        - - 0.702
+          - 0.4635
+        - - 0.4428
+          - 0.459
+        - - 0.486
+          - 0.459
+        - - 0.612
+          - 0.4455
+        - - 0.3
+          - 0.4125
+        - - 0.4212
+          - 0.4644
+        - - 0.6156
+          - 0.4266
+        - - 0.6225
+          - 0.285
+        - - 0.315
+          - 0.4725
+        - - 0.55728
+          - 0.46008
+        - - 0.4212
+          - 0.4752
+        - - 0.306
+          - 0.4545
+        - - 0.4104
+          - 0.432
+        - - 0.33
+          - 0.22875
+        - - 0.702
+          - 0.4275
+        - - 0.47952
+          - 0.46008
+        - - 0.3
+          - 0.4575
+        - - 0.414
+          - 0.4365
+        - - 0.63
+          - 0.2835
+        - - 0.6048
+          - 0.4482
+        - - 0.41472
+          - 0.46656
+        - - 0.42768
+          - 0.43416
+        - - 0.5625
+          - 0.435
+        - - 0.285
+          - 0.43125
+        - - 0.40176
+          - 0.43416
+        - - 0.69
+          - 0.18375
+        - - 0.482112
+          - 0.46656
+        - - 0.459
+          - 0.4635
+        - - 0.6264
+          - 0.2808
+        - - 0.441
+          - 0.4635
+        - - 0.54432
+          - 0.43416
+        - - 0.441
+          - 0.4725
+        - - 0.4428
+          - 0.4158
+        - - 0.486
+          - 0.2538
+        - - 0.4428
+          - 0.4698
+        - - 0.324
+          - 0.2385
+        - - 0.441
+          - 0.414
+        - - 0.44064
+          - 0.41472
+        - - 0.297
+          - 0.4095
+        - - 0.46656
+          - 0.24624
+        - - 0.50544
+          - 0.26568
+        - - 0.54432
+          - 0.25272
+        - - 0.482112
+          - 0.489888
+        - - 0.5184
+          - 0.46008
+        - - 0.482112
+          - 0.676512
+        - - 0.482112
+          - 0.66096
+        - - 0.497664
+          - 0.62208
+      keyframe_image: keyframes/anchor_no_parking_zone_01_f003249_t000216_600.jpg
+      frame_index: 3249
+      second: 216.6
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+    scene_anchor_count: 1
+  - id: no_parking_zone_02
+    name: no_parking_zone_02
+    polygon:
+    - - 7
+      - 575
+    - - 428
+      - 745
+    - - 633
+      - 648
+    - - 382
+      - 593
+    - - 23
+      - 569
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f004650
+    anchor_frame_index: 4650
+    anchor_second: 310.0
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_02_f004650_t000310_000.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: c38f8e8ece466c85
+      hsv_hist:
+      - 0.076777
+      - 0.068301
+      - 0.013496
+      - 0.004727
+      - 0.000859
+      - 0.00041
+      - 0.000293
+      - 9.8e-05
+      - 0.18416
+      - 0.047637
+      - 0.008652
+      - 0.005234
+      - 0.002305
+      - 0.000234
+      - 0.000117
+      - 2.0e-05
+      - 0.048672
+      - 0.012187
+      - 0.013105
+      - 0.008223
+      - 0.00252
+      - 0.000254
+      - 3.9e-05
+      - 2.0e-05
+      - 0.049824
+      - 0.006484
+      - 0.00207
+      - 0.000352
+      - 3.9e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.154062
+      - 0.080605
+      - 0.016582
+      - 0.005371
+      - 0.001309
+      - 0.000156
+      - 7.8e-05
+      - 0.0
+      - 0.125059
+      - 0.030117
+      - 0.011699
+      - 0.006406
+      - 0.002832
+      - 0.000703
+      - 0.000215
+      - 2.0e-05
+      - 0.003887
+      - 0.000117
+      - 3.9e-05
+      - 2.0e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.002637
+      - 0.000508
+      - 0.000254
+      - 3.9e-05
+      - 9.8e-05
+      - 2.0e-05
+      - 2.0e-05
+      - 0.0
+      orb:
+        count: 90
+        descriptors:
+        - 6aa74cc4fc1bed2b88a4bf8ae06894875aa66aad70ebe5cc2c1acf3145aedeac
+        - db9f645c3a165eba95ca9ee6796f967777f5fdeeeccd6dff726fe98427a4707d
+        - 399c647d359fdabf57e95e867b7d96241fee353dbff87d9f6fefb5c4ff8c50fb
+        - 6c27e043dd3c6a9b6bb72d8dcb695f9a31c6e83c9672dd005ffd0575e2e7de44
+        - 6bbeac457d7f91fa0afdbced1234c6a6cdd6fe14ad6bf19f5f17bdf7cb6c5efd
+        - 4dfeb69adbdd33d0ae5d8fa5fcd6ebf6e573ead68701ba79ff652fdb8a572fd7
+        - f30c67fd3c2ecc375da3f35a7b3d1473cee77da5b9fc55cf277ed9922fa85008
+        - 6f37a424e97f17fa1bfe1caddffdd3bf9754fd2ff547eb8a7f5f65bf86fd1ff7
+        - cf75e4f5af395e989bfa15a9cffddfaf975dfd7ff644ee92eedbedbfa6ff1375
+        - 79b76a6f30d86230614d7ded33ec9eb07eecd5c49f98e40fee6da0c16f865ed5
+        - 388d7cffcfd755ffd73fff2b6afd2e40e9b3af8278ba6bffffcfd57333cac46b
+        - bb8c64fd35ff5a3f57e85e127b5d94645bae1d2daffc7d9fafff91d27f8c505f
+        - 83b60facf8066ffb32ce38f51da7f09335d85fadf14f835fb88eafacabe023f9
+        - 789d7afadfd557f79725ff0a7aff6660e9baab005a2b7ab77fdf957bf38ac4ea
+        - 60a198fabded500f0f11a019b617483a811b5d101e4ad311cbd5147b90088f0a
+        - 6b36f465fb3f7c773bea1eed4e3dd737b755f525b4dbe58a7e7f75b6e6fc96ff
+        - 5a61d2ac4f438dee8aa4888f6cea738a7acdfbe5454392c9b020cf3f3d3c2bc8
+        - 72bf458dddffc12b4bedb9efa22c16b0c8a7ee919f6af5df9d1689fb4d0cde56
+        - eb94e75dbd9e7833fd4bd7d1fb3d967dc7b6fd2dbddc758f077fd8c2ae84f05f
+        - ba7baeacfb7d995f0b4d5cbd2ebd279aa45ff51586e9b3a1d37518bbca5d9fdf
+        - 8194fdecbe4f9fbbdfeabc7afffdf1633f717f29e1697bdf6bdf6dbed7e845fb
+        - 8ee4f4f1ee3b7e999bb218aa4defdd3bb7fd37bbf2548ed22edbcdaeb7ffd085
+        - 611f98ecac4e973b4eeab864f7b8e172d75e3e21fd29a31af8ad27bcdcea5139
+        - f58d44e4fc47ceef5fa0ba0a72783c31f9c6172d792b59ffbb9e85547dead00a
+        - 6384e77d74a6f837f9537bd9f9be147acfb7758dbdded7c7167edac2ef84f255
+        - 4b76f6657a3a387779eb5efb4dbcd637a7fdf7a5a4dfa5ce3e7f7da2e7e403dd
+        - 689d3e7ae9fd55efbf1fac192ef7605881bbeb107a4b3ab7dbd7557fd24086fa
+        - f18c55d4544bc6ef59b2ba1a76783423f9f7762169ff59ffb99ec55675285008
+        - 4ce2b4b0ad5854afaa37a619ce6a0a9b8145e8155665cba0dbf35d5f82748f46
+        - 0bcd5eff608ffdf73d087ea2fd3fb461ee33978ce09801ffe6fffe801e90a989
+        - abf372487f92966cd949fcec0ad8aef4da888662d7a304cd325c001f5f9cea95
+        - babfe5bfdbf9b4c73b75d4bf2e1c070fafd7ff15b7dfb7e1bf625ed3a74cb7df
+        - 0b1f6ed5f2bebc77bdca7ee5bd2fb775a637dface59920ee767fbe828ed4abfd
+        - fa9d77fafbc219ec8134a4a3587721576ff1ddf0380f28ff7bf3cfd73787267a
+        - 7550556c0a4e4338646ae34c7353897030947c6a49273b1dd1ee611c78236232
+        - 1eccf4e3e3217c9e3f33bc819d2f557c27dbdf9da2581df1dfdfdfe4b6d62308
+        - 6bfef61573fbb05669edfefd3b3d86b62fb6ff1485fbe5cf5e6f70c3e7cc57ff
+        - 1626f6e5e62bfc6f7bb278ea4debd50bb7fd37b1f0f88fc83edecdaea7f45385
+        - e31fed5dfc1ef9be1fec76ecc02c9765df647f3ce5dce5ce6e3aa7d6cda8547d
+        - 03d1374bb19c7db56d597e54de1e1e74cd0b5e0cd7b871d5affe16c20a06e1ff
+        - b4ccc093d6a8eec83b33f1124a6a6d59fbcf06d33a7649f29c96cf66b57bf186
+        - e08c5d975c6bec6b58a2b25a76781021f9e76ea139ff41ffbda6d350452850a8
+        - 5a1df5cd8f7fbe9e0d78dac7993e35eaeed7ffc79d09f7e0176bca96bd7fc55f
+        - 8221f4f1eaa9b82fbfb31091ecff6ddbb773ff95b2580add8e5a5fe696e40109
+        - b8a769edb661af6b1267d5bba125da057b0ac3ae72dee5334147bae977ccf6f0
+        - 82bfe5d7f2c0ac85be5353f7e9ec9f0b4ffbf795b7dccee72c32fec0a5c497dc
+        - 3cb57afaddfdf3f89f0dfd0b6bfd6e00f9fabf521a237ab7fbdf877bd7cff4e2
+        - fc74bd76996c519c23ffae38df75499bb1d6fd382965fb00fbeb753ee2fe467b
+        - 83a62e1ae890bc7fff5f75f5eccefe5fd72be715f66faed50e727eeb54c4afdd
+        - 8d85e3b7f4a8eff15c5353f2f3e9b8897b4a370fb3f48ea76c2effc0cdedd0a0
+        - a58eed59e4a8eb8a7f537850dbe8bd79fbc8667fb3760f734c3e674cd5f972a0
+        - 8208f7f93cabe906ff13f212feda3449ebb37f91b2fd13d70fba5242d5806528
+        - a08c57dd5cabe126be17f21afe680019f9b76e9138ff43ff9db65340c50864a8
+        - dd5bd56daa0e4f9c66e8b2ccd735917216d46c7c8121750ae9ac25d4fcbb4031
+        - 0baf5af9f4d1fdef1d055c92adebb240ef2b1f89769a22fffedfbac91488a5c9
+        - 9200f77b24aff8577f1d7790abdfb449ef3b1f98aaf827d50ffe12c2f7c064af
+        - 86a6e79be4a8ecbdbe5351f7f9ecbc893f3bb79df3548ed70c3affe89cc493f0
+        - 034f7ba5a20eef373ce25ee6bd2f9760b66f37cfc198a56ee4bf3f800cf021f9
+        - b4efc293d6aaaec83ab3b2f240ea69597bcf06f33af60cfabc06cf64a579f080
+        - 99f919e9ba8746fd66a8bc649713c1205c1c5c78cb8b511ee9c927fc3892a3b9
+        - 439e79d576cabd3338ee7ae7b43dd660c73f3705c1b8e57e4e3eba804d8057f9
+        - 3cb5fafafdf9d3c89f15bd1b6ffd6b08f9fbef533a63daf37bdf077bd7df6ec2
+        - 8b98b7d9adf47813df5f56368c9ff26de733bf10b7dd37f3cf7bd2c3968da577
+        - 43e2a798e815bcffbf5f51f5cceefe4b9709b73df667aed11e1a7feed484b7d5
+        - f595d46c980647f94350adec537188f65cd46c6a7922d93fb2e9651e7babf831
+        - 915c9dfdb0066d9f369a56749733a169677c1cb869dc510ee9aaff84b8f0a129
+        - 583d3e7289ed1132e1b5af18bfbf4a3b85b7f9103a5bfa24dbd35073c2438f02
+        - 195feeef169e77f6358cfe227b77a3707cfefecac8bb612ff7efa68161f26efb
+        - 396d41e3d48bcf5716a2defab321f0605bae178979be55bae4c5bd303fdad0a8
+        - c2a0d691e1a9acefbfb75210acea7c5db36b2391325c8af11c125f679440a18c
+        - 98d57fef14d65ffdf444df02f37f3a617efb9debe8833dbdf3e9ae9135d2b5fa
+        - 4af2f6986ef9b4e7af5f74bdaeecfe1fcba3e701366fa6f10a527eebd6d4ffdf
+        - 487ade5b61f87917ff5f7ef4aca2a7fc272bee10872926f346b53289dad42d5d
+        - 87a0e399c4a9e85bbe1351d6d9ecfcc97b19339db3549ed10c3affecbdecf990
+        - 83869290e6a2accfbe9242d26ce2f149736f2a3836dd86ce3c36df048c40a989
+        - 82aa929be2a3bccf3eb752522ca26449a30f2a9932dd8bf11c125fe19450a189
+        - 3145c9f396ab477557a3dfdaf321b06459ee168a79bc5dbee6ceb530bddad0a8
+        - 833afc4cec37d85a5ffab460b8baf72fcf757e98a543efda0f5ef7be9ee161ad
+        - 99dd7effbdd67fbdfd4cf604ff7f3ae1fef3bfe8f8a973ffe3fbe6013294ed7b
+        - c72ae598ecb7b85bcffb51ff9c8cf66bef2d379d957ee7d01e1a7fee9dccb3d5
+        - 918ed79fd6a22ef776c3c3d67962ba4c7bef029eb6de0dff7c26be00a5c0a188
+        - 9ba2d69bd2a3b9c53e2753d6ece2a8cc372b6b9d329d0dfb0c261fc0b440a189
+        - f85d76fe0d5e5eb5f54ef60deb7f13d7fcf6ffeeecef53eff3fbc41363beee5a
+        - 7c5eea57655e7ff471cefe8a7bfd97767efcf7cac8f6f5aaf7ffe58167ff7efb
+        - a0a8de9975ab61033f15f210aecb2459cbab27903afc53f18d929241d100e6aa
+        - c9dd7ffc24d67fb4fdced626fd7fb27576f53feee19d33eff7fbe68026b42579
+        - 82b0b2f9e785bc471f1b5073acde6c09ff3bb711965ec2f19fd05aeb9408a18b
+        - 82f2f0b9eec1b84f1f5750f7ac8efc09ef1bb791f67e82d19c12feef948ca7df
+        - 4f5bf7ce62143e7429c87fe67cffaff6e6ffb7cec59abee136786e8a0fb72bfd
+        - 0fdb5acbf2947efc25487f667cd7a9f4767a96ead79028ed3eed24c23eb7a8b1
+        points:
+        - - 0.7375
+          - 0.43125
+        - - 0.64375
+          - 0.45
+        - - 0.6125
+          - 0.45
+        - - 0.65
+          - 0.321875
+        - - 0.72
+          - 0.43875
+        - - 0.79375
+          - 0.446875
+        - - 0.63
+          - 0.45
+        - - 0.69375
+          - 0.446875
+        - - 0.69375
+          - 0.453125
+        - - 0.71875
+          - 0.378125
+        - - 0.405
+          - 0.1575
+        - - 0.615
+          - 0.45
+        - - 0.725
+          - 0.25
+        - - 0.405
+          - 0.1575
+        - - 0.5125
+          - 0.896875
+        - - 0.69
+          - 0.44625
+        - - 0.775
+          - 0.434375
+        - - 0.735
+          - 0.43125
+        - - 0.639
+          - 0.441
+        - - 0.43125
+          - 0.43125
+        - - 0.74375
+          - 0.19375
+        - - 0.6975
+          - 0.4575
+        - - 0.71875
+          - 0.26875
+        - - 0.615
+          - 0.46125
+        - - 0.6588
+          - 0.4428
+        - - 0.684
+          - 0.4455
+        - - 0.405
+          - 0.1395
+        - - 0.612
+          - 0.459
+        - - 0.66875
+          - 0.259375
+        - - 0.5625
+          - 0.21875
+        - - 0.7375
+          - 0.384375
+        - - 0.4275
+          - 0.43125
+        - - 0.5375
+          - 0.240625
+        - - 0.3625
+          - 0.4125
+        - - 0.2625
+          - 0.32625
+        - - 0.44375
+          - 0.446875
+        - - 0.693
+          - 0.4365
+        - - 0.693
+          - 0.4545
+        - - 0.5125
+          - 0.25625
+        - - 0.7375
+          - 0.415625
+        - - 0.705
+          - 0.46875
+        - - 0.6156
+          - 0.459
+        - - 0.5
+          - 0.309375
+        - - 0.4425
+          - 0.44625
+        - - 0.38125
+          - 0.4
+        - - 0.405
+          - 0.432
+        - - 0.4212
+          - 0.1674
+        - - 0.6675
+          - 0.25875
+        - - 0.423
+          - 0.4185
+        - - 0.3672
+          - 0.432
+        - - 0.3456
+          - 0.4212
+        - - 0.5832
+          - 0.44064
+        - - 0.5832
+          - 0.4536
+        - - 0.69
+          - 0.2625
+        - - 0.585
+          - 0.21375
+        - - 0.5832
+          - 0.4374
+        - - 0.4104
+          - 0.4266
+        - - 0.5175
+          - 0.23625
+        - - 0.702
+          - 0.468
+        - - 0.285
+          - 0.3225
+        - - 0.51
+          - 0.25875
+        - - 0.4428
+          - 0.1674
+        - - 0.6264
+          - 0.4266
+        - - 0.4212
+          - 0.4158
+        - - 0.66
+          - 0.33375
+        - - 0.2925
+          - 0.285
+        - - 0.66
+          - 0.2775
+        - - 0.54
+          - 0.207
+        - - 0.342
+          - 0.4455
+        - - 0.45
+          - 0.45
+        - - 0.378
+          - 0.1728
+        - - 0.45
+          - 0.4185
+        - - 0.684
+          - 0.423
+        - - 0.40176
+          - 0.42768
+        - - 0.423
+          - 0.4545
+        - - 0.4536
+          - 0.4482
+        - - 0.3456
+          - 0.4482
+        - - 0.3564
+          - 0.405
+        - - 0.54432
+          - 0.22032
+        - - 0.40176
+          - 0.40824
+        - - 0.41472
+          - 0.4536
+        - - 0.4536
+          - 0.44712
+        - - 0.53136
+          - 0.20088
+        - - 0.49248
+          - 0.20736
+        - - 0.54432
+          - 0.44712
+        - - 0.5184
+          - 0.23328
+        - - 0.50544
+          - 0.42768
+        - - 0.482112
+          - 0.412128
+        - - 0.482112
+          - 0.279936
+        - - 0.497664
+          - 0.326592
+      keyframe_image: keyframes/anchor_no_parking_zone_02_f004650_t000310_000.jpg
+      frame_index: 4650
+      second: 310.0
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+    scene_anchor_count: 1
+  - id: no_parking_zone_03
+    name: no_parking_zone_03
+    polygon:
+    - - 318
+      - 623
+    - - 20
+      - 620
+    - - 522
+      - 805
+    - - 637
+      - 684
+    - - 325
+      - 624
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f004746
+    anchor_frame_index: 4746
+    anchor_second: 316.4
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_03_f004746_t000316_400.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: e8e0c0d5d16b2ade
+      hsv_hist:
+      - 0.079727
+      - 0.026563
+      - 0.004941
+      - 0.001074
+      - 0.000527
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.327871
+      - 0.007852
+      - 0.002715
+      - 0.000605
+      - 0.000137
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.077402
+      - 0.015215
+      - 0.012676
+      - 0.005469
+      - 0.001113
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.025859
+      - 0.006211
+      - 0.001504
+      - 0.000176
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.131973
+      - 0.089336
+      - 0.018711
+      - 0.004258
+      - 0.001016
+      - 0.000137
+      - 2.0e-05
+      - 0.0
+      - 0.098086
+      - 0.029551
+      - 0.012305
+      - 0.006406
+      - 0.002598
+      - 0.00043
+      - 5.9e-05
+      - 0.0
+      - 0.004238
+      - 0.000195
+      - 9.8e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.002441
+      - 0.000215
+      - 7.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 88
+        descriptors:
+        - 38cc3cfe2d5355ffd717fc127bfd2263ebf2a782782f3bbdf3ebf61d16f8e4ea
+        - 38ddfcfeedd355ffd737fd137bff2240cbb3af02582b7bb7f3e7577973aae4fa
+        - cdfb3a1a7bddb3f0ae4ca5adbcd6e230a63bca56e70faa7ff76123fb420727f3
+        - 68bb8c11cddde5ff82fcbc0f62c4d78649e6ea1c5b6bfaf87f03f5f9c30cdefe
+        - 6bac635515ffe837796bfe98ab2c96a42faefe8cbdbcf5cf2f7f30c0e78c52fc
+        - 0efc327b399d3af0af4c4f21acdffe74977bffd6c6d5ba75a3f90beb028727d7
+        - b89d3cfaa9ed55efb71fa4193fff2251adb3ef007a4b7a37fbd3557f7280867b
+        - 4ab9f67fa9907896abdd5ea1edffd472867ffdd592d8bae10ffddfcb868683df
+        - 59566aa1477873d6696dee078f2e0b7471c4ce678cb0f5e0d7e50207eb577e5e
+        - 297e388a799d17704c6efdacbed4abb4dc38ce6fc327683ff11522ba521e17fd
+        - 6161c6d04d99ed27caa4ac0ea280568648a46a0d402bf6dc3c1cd738453cdaac
+        - 0ff832287bdd36f8ac4ef425bcd7aa34fc79dee6c607bafdf3d523ab523727f7
+        - e9948d9eedbd115bde7fbd3df6f48afbcd02ee05bf6b7b13d517733ed84ccc7d
+        - b44fcade5c836e5d9688d67271eba84078e817d878b702fa7aafafc835baf081
+        - 0f1d6bc3e5ffffd23dee5ea79c3fb768a767b7d6e59939ee675fbf829f772dff
+        - 0fdef5edf65afafa3bfc74e70d3fd657774cb777b37cede26e7be7c6bfa5fff3
+        - 0f79324879953ef8ad48fca92cdfa3f4f679df6ec60322fdf35d2bbb12b727f7
+        - 9b142fbd30766d3f346eceb7d925b2e5552cbdadbdd5759ee26ffb8426f4bc75
+        - db14e77dbd767937b56fc6b1593f977f4596fdadbddd758e477ff893a6e4f47f
+        - 2294a64569ffb9a6adef7ebd8abee616cd33ff04919862d60e5ef8c2da4c54ff
+        - f17bc96782174e1573aab64c3303d1b604e66cdee9dcfd2abecfa5b02bf00229
+        - cc9c0992cdfca7b2d456ac56f2603b4169e28ab27b277a67ed078e79995bddd2
+        - 6bbdf775eb7eb877e3f97ea909bcd636a7dff79597dbb7c11f7f5de7e7c407df
+        - 33ac6cd55fffd8771debfc9f382d16066daf578dbdfed5ce5f1f99b1ef8c5adf
+        - 6bbdf675eb7f30f763ff7ebd4f3cd6b7a7d7ff15f5fbf7005f7b75e7efe48edf
+        - 2a376ed168fbb936adfa5ee9bcbf86b48737df06949860dc4e1fe9938ec41ed7
+        - 699f5777702b6737e0a87ee8f33180130efe642af9f8e02de4bb60506deac2a9
+        - 7da3d94c8e0fcaf86230b9ce5368dc323fc0646edf63ff11528961fc7da35631
+        - 0f5c3a4e3b9f1770ed68dda9fed5a774d638df6ec0836cbdf35d21bb52bf0d75
+        - 0a9c3a58fff4b047ff1d6c112c9b26dce53b8310320f32f75bbf1a4bda04ed9b
+        - 69b3200ccddd856fcaecbd2ea2ccd684c8a2ee05db2bf2dd3d15b3f94b0edeff
+        - 6bfba088fdd595fbc6fc9c2fa0fcc2a6cdb2fe15cf6bfa917d55bffb5b0e9fff
+        - 63bde365fbfcb857eb61faa9a9be5632afb7fb9596dbf7c51f7c9ae3c784a7ff
+        - 6394e6552976593775ffdeb169be967fc7f7fd85bcdae7c45f7ed8c3a7c4f47f
+        - 2f8e3ad8f1fedaa63d5b56198c1eb6b5973b9719b79868ff637f98c796959a47
+        - ccd6b2f2a520150f7b974f30cef8cceed77fac13b8f6faa289f65f6f846bb525
+        - d81a36bb27bc31037f35c3308f0802f9e63fbd119edcf79087f35a43a60c9567
+        - 3aee7668d3cf5bc6ab15e8092e5d2634858a411492ab70bd3bdc007bf395c6ee
+        - 0e8f56b3f3d0b8a28f115ba38c9fe0a7aa3bb7d114b80af42e716acb96872d87
+        - 650efe44f4baea326dcd7e6cdb689736dfe4763cbcfa67ce6e7e65c4cfef5245
+        - 42ad6261f9f9b847af01fa81a99e5420ef3f7b919239f6f73f7c9aebc784f7ee
+        - 629cee75f9f47817eb717eb9e8be547ac7bff79596daf7c51f7edac3a7c4f6ff
+        - 0f9af9ede63effbb3fea5ee6dd2f97e47f5fb76f87f86ddf6e7f2f866ffe71f5
+        - 2bbc6d957dfff8371d63f21bb83d16a0c9afff81bdfe71ef4f3fdac3c70cd6da
+        - 4bbd7241fbddb877af69bcafac9cd624ae37ff159629f7d57f7d1afbc78c87df
+        - 0f5dfbe5f406ff927d6a7ee09dbfb560fffd1feff1bc2dee66ffafc4d6f3e0f9
+        - 6bff20883ddd95774a6dbc2fae9c96a4c8aace05df2bf295ff552afb5f0edfff
+        - abb162f86b957c7baf59dc9f3cdf3e34efbbf785d70b3ad5c3dfdaee1f84b2df
+        - a9b50dbabdad51fb3f5bfd19d6ff4a50d98bff153a6bfbd7dfdfb37c1008f2f2
+        - 185f7aeff5ae6ff67dc8fe46ffe723707eefafc8c9b831eef7ffa6013afb65fa
+        - a926b53f692ff1baeb3e305dee68191ba5476e2fa465db7dc5fa5324407543cb
+        - 16a5f7d5e567fccf3bb378034cfa552bbbcf3791d6fa9ac83b1adfa78570f382
+        - 258b8d4fe816ecbdaeb9eac0c1a6ccfacc566adc9dd8eb202fffff54c0b2feac
+        - f28c74f47debdc2fd9b6ba1b6a693503fbf7ff212cef49df7bbadd17556c540a
+        - edbbc161ec2fceb842e8b8ccd321d1921bcc64fe9972dd3aecdd21f44fbb52b0
+        - b2f769555a52bfec3367d1b7696c9e217fdfd7e5bdd6eddf362e8be567a4f6d4
+        - 12a9de95dda7e84fcfb1fa022cfa5402e9ef739112fad3c03d149f6b8508f18a
+        - 720cd4dc5febf82f1bb3f21b6a69344bfbf7ef21387f4bdf1dbedb13d568550a
+        - fc7afc70a84f57da7bfeb47c9f3f433bb7d57d72eb67fb10dfdb65bcc8f90f73
+        - dd671326754e667478c86b4c7ef119b6b4647c6ee1f1b02ab1ed25024a734339
+        - 12a9f6d5cd27ecef3fb17a024cfa5402bbef739112f89bc0091edf678560f38a
+        - 829eaad4f3f8b3d6ad4d5ef50cbca6e6a673b704b69da2e33e1d3ac3c60cfddf
+        - fcb0fa642d5c56d8f3fab718dbf9593bd9d4fd6bec67fba0dbfb653f43ed4e23
+        - 629cd49d4debb02f1bb37a3b6af9044ae9ffa78118fad3dd1d36db63d568d58a
+        - 2bfd20ac7f9d9e770d689cafbe1c9224cebbdf65de0b709ff755aafb168c96ff
+        - b2f46d9d42d3b9ff1763d0f7d96e9e297fbdf7a5b9d67ddf1622dbe525b4b7f7
+        - 1d557fe7345a6fb86ce8ff44d34f9f717acc7ceec9b07d2ce7e9a7846dbb6cf1
+        - dd78bcf52a3f5d963bf6b60c9f3f433ba7fdfd18a87ef102efdf7734e0f00b5b
+        - e878bcf168ef71963bfab42c9f1f433a8ffdff10a97ef132dfdb7534c8f10ffb
+        - 6db6b8fabdfd51f93f7fbd1cdffd4a79d98b7f3a3b62fb97dfdf77fdda4bcff3
+        - 0f5d7be7f48afff67de85ee2fdbfb5607f7f17eee19835ee6effaf8027f271f9
+        - ac78fcf1ecef51927ffbb43c9f1f4338cfdd7f58bb7ef1b2cfdf35fcd8f946f3
+        - 0995b8fffdcdfdff1f4ffd15ffff3a50d98b1f8cfb2a79f7e7ffb26852cae8fb
+        - a282d6b96debe80fbf37f3b9ee481c19eba7ef113afc4bdf84b25b53c548d50a
+        - d929bcf5881e5d27beb6a608bf37437bc0f7fd8c685df3c8f7fbfe110060ab6a
+        - 2d94f9e9fc6f5bfb5e7ffd1cd37d5a70dd9a373abb327b37dfef23fcd1c9f6f3
+        - fe75f4b7bb4bdee89bf6b51b4f6f5f97dad5ed6368e7dbbcbbd3453f477f4e76
+        - 13c5674b74d3aeed5c495ac2684cbca4780a12edd1b82ddf3d1e8ec4579ef1bc
+        - 8282f6f92dabf8c7ff1ff3318e8b34cbef1bff10b6fd03d106da52c3d6c4e107
+        - 8abbeed0edd9bd57af5d36b528bff684ae33ff95d66922d15e59fecb1e84fcdf
+        - 88acbcfd3d6fb16f5eaa9c1abebb6223c93ffb01307b53deefdf5737506805aa
+        - 7c50f0e66d5f5fb875eeb72b5b7d5bfe5fd4fd6acc76ffaad7fff59567bf5e53
+        - cabd3ff621cc7d37a95f7e3dbfff0253a6f7fd0079c9b2e1d3fb7a8b08c0877b
+        - ca1ffff7b9de7d37a9ecbeadbf3f007386b7fd80f9d8f1aceff37e930ac4877b
+        - fd78fde56d7f559e5bfab4089b3d533bcddd7d58886ef380c7d975bceaf946fb
+        - 5d7d5264175e76f479c06e4e7ef109b4b2ec506ee1f3b06eb3ed05026b736bbf
+        - 585d536c32522fe631cafea279b7a1f47efd9ce2499ba5eeb2e7a68127f02639
+        - 2b7dbbd6f5ddffd6fbcc7c0a3efd772aa47b775bc7fbbae87f5975aac77bd7ff
+        points:
+        - - 0.23125
+          - 0.184375
+        - - 0.2325
+          - 0.18375
+        - - 0.6875
+          - 0.475
+        - - 0.6125
+          - 0.465625
+        - - 0.60625
+          - 0.178125
+        - - 0.6825
+          - 0.48
+        - - 0.24
+          - 0.1725
+        - - 0.675
+          - 0.484375
+        - - 0.775
+          - 0.475
+        - - 0.7125
+          - 0.475
+        - - 0.61875
+          - 0.459375
+        - - 0.6825
+          - 0.4725
+        - - 0.475
+          - 0.23125
+        - - 0.26875
+          - 0.1
+        - - 0.41875
+          - 0.271875
+        - - 0.39375
+          - 0.284375
+        - - 0.684
+          - 0.4725
+        - - 0.53125
+          - 0.471875
+        - - 0.5325
+          - 0.4725
+        - - 0.4125
+          - 0.303125
+        - - 0.54375
+          - 0.346875
+        - - 0.79375
+          - 0.14375
+        - - 0.576
+          - 0.4725
+        - - 0.585
+          - 0.1875
+        - - 0.5775
+          - 0.4725
+        - - 0.4125
+          - 0.296875
+        - - 0.55625
+          - 0.3625
+        - - 0.51875
+          - 0.35
+        - - 0.7125
+          - 0.47625
+        - - 0.621
+          - 0.171
+        - - 0.6075
+          - 0.46125
+        - - 0.6225
+          - 0.46875
+        - - 0.5724
+          - 0.4698
+        - - 0.54
+          - 0.4725
+        - - 0.40625
+          - 0.325
+        - - 0.5375
+          - 0.14375
+        - - 0.6225
+          - 0.13125
+        - - 0.50625
+          - 0.296875
+        - - 0.43125
+          - 0.315625
+        - - 0.27
+          - 0.4575
+        - - 0.57024
+          - 0.46656
+        - - 0.5508
+          - 0.4698
+        - - 0.375
+          - 0.285
+        - - 0.585
+          - 0.1845
+        - - 0.594
+          - 0.4644
+        - - 0.3975
+          - 0.26625
+        - - 0.612
+          - 0.459
+        - - 0.46875
+          - 0.25625
+        - - 0.459
+          - 0.243
+        - - 0.414
+          - 0.2475
+        - - 0.7575
+          - 0.195
+        - - 0.585
+          - 0.486
+        - - 0.735
+          - 0.16875
+        - - 0.513
+          - 0.486
+        - - 0.5175
+          - 0.34875
+        - - 0.315
+          - 0.465
+        - - 0.5832
+          - 0.486
+        - - 0.5184
+          - 0.486
+        - - 0.4968
+          - 0.2268
+        - - 0.54
+          - 0.3465
+        - - 0.594
+          - 0.486
+        - - 0.4125
+          - 0.30375
+        - - 0.5175
+          - 0.2475
+        - - 0.5184
+          - 0.486
+        - - 0.6372
+          - 0.4644
+        - - 0.324
+          - 0.4635
+        - - 0.36
+          - 0.252
+        - - 0.49248
+          - 0.22032
+        - - 0.49248
+          - 0.23328
+        - - 0.4644
+          - 0.2376
+        - - 0.396
+          - 0.2655
+        - - 0.47952
+          - 0.24624
+        - - 0.4428
+          - 0.2538
+        - - 0.47952
+          - 0.47952
+        - - 0.5184
+          - 0.20088
+        - - 0.44064
+          - 0.25272
+        - - 0.36
+          - 0.2205
+        - - 0.675
+          - 0.171
+        - - 0.46656
+          - 0.46656
+        - - 0.405
+          - 0.324
+        - - 0.5508
+          - 0.1674
+        - - 0.3348
+          - 0.2376
+        - - 0.54432
+          - 0.2268
+        - - 0.5508
+          - 0.2268
+        - - 0.5076
+          - 0.2484
+        - - 0.54
+          - 0.3456
+        - - 0.55728
+          - 0.34992
+        - - 0.497664
+          - 0.295488
+      keyframe_image: keyframes/anchor_no_parking_zone_03_f004746_t000316_400.jpg
+      frame_index: 4746
+      second: 316.4
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+    scene_anchor_count: 1
+  - id: no_parking_zone_04
+    name: no_parking_zone_04
+    polygon:
+    - - 49
+      - 591
+    - - 6
+      - 649
+    - - 632
+      - 787
+    - - 634
+      - 623
+    - - 58
+      - 586
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f005257
+    anchor_frame_index: 5257
+    anchor_second: 350.467
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_01_f005257_t000350_467.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: e0c0c0d4fd6e4e9e
+      hsv_hist:
+      - 0.102988
+      - 0.021562
+      - 0.002637
+      - 0.000566
+      - 0.000234
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.239336
+      - 0.004355
+      - 0.000234
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.078047
+      - 0.01084
+      - 0.010957
+      - 0.002305
+      - 7.8e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.044414
+      - 0.013281
+      - 0.00666
+      - 0.000742
+      - 5.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.093555
+      - 0.108945
+      - 0.077656
+      - 0.041816
+      - 0.003809
+      - 0.000469
+      - 5.9e-05
+      - 0.0
+      - 0.102402
+      - 0.01207
+      - 0.004844
+      - 0.002891
+      - 0.001426
+      - 0.000273
+      - 7.8e-05
+      - 0.0
+      - 0.005801
+      - 0.000215
+      - 3.9e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.004062
+      - 0.000117
+      - 7.8e-05
+      - 2.0e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 88
+        descriptors:
+        - 4fb3b91caa9dbfb9ae5c9cecfcf6ee729771fd6ed741ae7de8396bfe18278775
+        - 25343d63f4ef639e7fe97f58d3758938951e5e38b3f0793e6fdf3544c8dbc2a1
+        - af13d43cfb9910389fedf1edcfeeab989621e73495034a9ccaf769fbdaae0bd3
+        - 4972bd1a2addb91ceedd1fedfcd4dbea0773ff5d8741be79ce153fb8de960f79
+        - 8db4bd73f56f63db7eeb77509e1749389d5a5e18a3f479624d9f3524cad9c7fb
+        - 76db13ac2d4616c0011cb86c46d82952dcd5cc634da389a0b1f0079f593b2e97
+        - 09953dd3bdeff1bfde712f12de752865c1323a38b3f87bfdef9e0746da4ac5f3
+        - 4f9bfdf7aedc7db80bff3eb7f96fdeeaa777f59d9758eff14efbfde4bfe7d071
+        - 4fffedd3babdab99aed81fe6fc67db672773fb9fa348bff56e0bafec8ed61179
+        - 43bfe99faab9bfb9bafe1decfccede26976bfd8fd740eeffac1eafbc1c6787f5
+        - cb3e7d553afbbb13fefe1fe4f8ff97e72775ffada7d0efdf663f29802ef40775
+        - c5953df39ceff1bffef9af10d67f286981127a38b1687b75efdf5756d84bc573
+        - 22b7933cab4b16ff9f4ff8fdceee2a949669cd25dd43c29aa0d44dbadaee87d7
+        - 053cbd73b06f739e7efb3f10d777093a95567c38b3f4792ecfaf3514c0f1c773
+        - 0936ab0d3aff3f57bc6fdef59ca6a2f50734de2cb589a54e661932908af4ad75
+        - c99d575ddbfe6437fd1866507e7384f522b67c68f1e933dd2ffa44424ae0e82d
+        - 4ff1fdd3aabdbfbdaef01c82f97fdf632773ffdc8340fffd6e4beffc16b751f1
+        - 17cec29fd693befe96c7de9669e6ae407feab7f6f6bb2eff7e2ebf80b7ffb0d9
+        - 45953df3bcef73ba7e792f10d777486191577e38b3787b36ed8f2754d849c573
+        - 9fa7ac71adfdfdf7af7cbe9dae6d5a87ad63ef1df66162f16e5b5551475cdbca
+        - 77fb3bac385717f98b4cfcedde96a370d655cc67cd23aa71f0b52fbe583f2775
+        - 7984d646913e46bf618baf484b208cf631c66c2cbda9850ebaff0454eae6ca2c
+        - 99398de1ea47cd5f32aa90cc3d17d13b2eff77cfe95ed158dd837fa431f003b9
+        - 4b366e5566b2f91ffdee5ee6d9efd6ed377dffadb5d8a7ce667fa9802fe4cff5
+        - d23292b8aba0944fba9b81fd8cf2689ea333ec113647824198325fba8840a717
+        - 418e565cfdbf6037ef1d6e4c6a6896f7a1266a1c967827fd3e7a5042daccd90c
+        - 4b3e6e5872d73977b44d56f51cb7b6fd2634df1cb59d37ce5e7f32c38e842d7d
+        - 5fbc92b2b9ac1cc2abd7880daefe4f9fa56bd915d7499ae099d25f7b88658356
+        - fd2ac257a1fa4082771f66386ae087fd11eeec183efce72282fb5043e2e54e46
+        - 43b5ed9d2adfbf39aefe1decfceeda263767fdadd340ffdbe41dafbc9ef69375
+        - 8f097a69b296bf137d0167909d1fb2b4de1b931dd698658467fd0e41d684abe1
+        - 5ab43bb2b7e5b3c2fbc58d3f0edc5e28bbbbeb9197cbbaf7db571b6b8205275f
+        - 4b3a6a5973b4b957ad6ddef5399eb6f4a63fff9d9599b5c65f7d3ac28e84a9fd
+        - 72ade604dff1b667a9e5cc8b28ec56962af7e381546bf6e93f208d7be76ebfde
+        - 99df1a6a73965ff07d487d447e53a250f4aa066ee392287f67ed22087a936a89
+        - 4bb36b8c3a7b997eac6ddeed9cbe96f4961ddf2d818be4dec43d2ad60e840f7d
+        - 4bb7ecc53e9bb93fefe01eebddffd6263675ffadd049afdf664dabbc06e417fd
+        - 893a8177a48f6f1736ea167cb313d1b80d6e5f8fe9dc612ae4dfb5b02ed092b9
+        - f6aaee17a9fa5083fb5fb6bd6aecc65f81eeec14beedef600a7a54d3c345de57
+        - e23ae616a27a108efbf7f6bd6aecc71f97e7ed05beede7631a3650d3c7f55e5f
+        - e6bae618e9f9f003ff5fb2bd2accd65aa3a6ee15b66fe7531e3675d3c144f757
+        - 03796bd4e4d6fc777dca720b0cbeb620febf1785d5feb4ee3f7edeeb4d94e3df
+        - 9b8ec613b09e6cb777df56f5eb6392dd1726ac9cffdc2dbfeaffb5c4ae84d85d
+        - 1dfe4d49b8374a9e5768be6c5b23d1f415c46cbcab126d1ffecfa5f4bbf35031
+        - e082ee18fdf9e00fef57a61d6ac85e5ea182ea15962de7f31e1e1059d34cde4e
+        - e6b8e710fde9b0839bff93bde6fc460a8d37ff11b36fdab31d161dfbcd4cd657
+        - a06e2f66744fe770e8cebb09f7451131b0605d6fe0e5200ff189619040fb56e1
+        - e2b0a512ddf9908793ff939b60fc5e1ac997fb113e6ffbb71f16d9fbc54cd6de
+        - 0c5665ed7663efde16e85ae7fd6fb9407e5917f3a09045beedafaf84bdf954b9
+        - e63ae71ce8fab186bb7ff2bd6aec975b87f7ed15b6efe7631e3674d3c5e5575d
+        - a819baddf6deb5d6bece7626b8bfa750eefbbf4046bda2eb767fb68155786fdb
+        - e2bae318ecf9b047ff4fb0bdaa8cf698efabef15b66f86f31e1632fbd54cf7df
+        - 44b9bdf7e96cb5deaafa3418fcf7453baf5f7d525372fae0cffb772ec07187fb
+        - 818d7f5b74df6ffc7c4c750471c3ba71f22a064ee3b8287f669b2000589363f9
+        - 72bc23a8dfe592678949d81b2cfe2400edb3d3913e2bd0df3d469aebf50cb7df
+        - e3caef54f03efdbefb5fb2dd686c967bb7e77d2db4cda7ff5e3efdd0c5f4f25d
+        - e2a2ea186df9f0c3ff5fb2390acc7658e9aaee15366fe6d31e16117fd14cd656
+        - eaaaa71de8e8b987ba5f72fdacac969aa777f715b77ee7e31c3e7ecbc5c417fd
+        - d3ce6e5cb0be5ebe7d6fb6fd6a6c967d97e67c2cbdcd25ff2a7ef5d2ced4d85d
+        - eb8ee71dfcbeb9977a5f52dd7cac96ffa767771db4fea7ff5d3ffec0c764f3fd
+        - 2a9c6298d7fbf247bf45fe9f2a1c36907bb3d3913eab34df3f779a53f74cf65e
+        - 3a9c6a5997fbd1477f45fe972a1d3654fbba9715beb935df537f9053f7ccfc5e
+        - e39e6ac5669ebd77596e76b73cbcf6616f6f370de5fca4eb763bfe814d88dfdd
+        - d41f7ff5b64f37b0fce0b676d73d014326f56d62f9ed112ee9c367106839057b
+        - 3a9c22b8dfe7b0479749f83f287d2480fdb3d39136af50df1f469ad3f70cb7db
+        - 629969fd89d99d878b7f94bbba9e467bcdfffd815f4ef3d1d7f9dfff145c957f
+        - 097e93f7b4cf6f77bdcb7a44fef7a1f4b67e5e0ae1dd30aea7fe35800ad68379
+        - 2a90b2f8ffa7984f1f0bf03b2cdd2488ddbbd7913eaf42d71f5e9afbd30caa9b
+        - 185d33a535cfeff634ecde669f37a1e47efd1feda99831bee1e6af842efcb5f9
+        - c39ade5d23be50977f5fc655aab2e7fde7aebe9cafdcf7f38e3a54829ac4285f
+        - c398fe5bcbfc3817ff53469538b6a67ee7affa94b7dcb7f31f3e52c39a44ac5f
+        - 0aac12bafde1b86f9e095819aceb2080df3b9301366b02ff5ed71aeb9008a98b
+        - 63aef2c8f5b7dad7cf0fbc5f288ab6f4f7ab5e9c960b20ff3e5e92fa9bc6e84d
+        - 22a8e298c5f9d0475f5ff0972a8c7618e9aa87951eff36d11f549aebd74cf4de
+        - e50f6f46ec69eee5c8fcb9ebe3689f0348e2476ff433ceec7419e4a945ffd6c8
+        - b55958fb8e175cdd5702d4420193e16d7ed817da4b967db2b3c8862e3ff9a0ab
+        - ed8e7e5cf42eefeff94fba7d7b68b633cbe2462dbcaf24ff7e3f25d8c5e8f24d
+        - 0aae11baf9e1baef9f4f1818acea6084832bca91366f8affacd61beb9004878f
+        - 0a88ead8f7f3f8475f45fe972b8c364c7bab97959eb837d75f5f9a43d7ccfc5e
+        - 18df72ef37d2bf77b5ccdea3efef2244fe7b9fc1ce9921efe3fd2e8136deaddb
+        - 99fdb7f4b7fe77f7bdcb6e563ef720f4b77fdf08e3bd30efb3ef06020a70a179
+        - 1a5d7fcf3fdf5ef6b5ccde227eb7a3e466f6ff68e98931ffbbff259336de6c79
+        - 9b5d5fc7b6de6eb73dea5ee67d37b1e46ef69eeee99931eebeffa6802ef82839
+        - afb6e8e8fd35fada1e7dfd1f79fdfe28ffcbf7ffbe667af77f5faffdd7cffcd3
+        - 2eb768aafdb5fadd1f5ddd1fedec7e88ffcbb7b7b6726bb7ffdf8fef974ffdd3
+        - 9add7edeb7d27ff7b54ddfa2edffbae47efb9feaebb928eff3ffa68337d6ad79
+        - afbef8f8fd3ddada5fffbc5f9be8dfbadfc9fff7be67fff35f5fa5fff7fddad7
+        - 02aeb191f6a1bacf1ef358d7ace6e440376b239cb25c8ff34c0e9fe694c4a5dd
+        points:
+        - - 0.75
+          - 0.446875
+        - - 0.275
+          - 0.18125
+        - - 0.69375
+          - 0.440625
+        - - 0.775
+          - 0.446875
+        - - 0.2875
+          - 0.184375
+        - - 0.75625
+          - 0.434375
+        - - 0.28125
+          - 0.19375
+        - - 0.8
+          - 0.45625
+        - - 0.73125
+          - 0.453125
+        - - 0.70625
+          - 0.45
+        - - 0.66875
+          - 0.453125
+        - - 0.2775
+          - 0.195
+        - - 0.7125
+          - 0.440625
+        - - 0.279
+          - 0.1755
+        - - 0.65625
+          - 0.446875
+        - - 0.5
+          - 0.44375
+        - - 0.735
+          - 0.45375
+        - - 0.2875
+          - 0.109375
+        - - 0.279
+          - 0.1935
+        - - 0.4625
+          - 0.321875
+        - - 0.7575
+          - 0.43875
+        - - 0.45625
+          - 0.446875
+        - - 0.625
+          - 0.325
+        - - 0.6675
+          - 0.45375
+        - - 0.39375
+          - 0.446875
+        - - 0.5025
+          - 0.44625
+        - - 0.6525
+          - 0.44625
+        - - 0.19375
+          - 0.371875
+        - - 0.45
+          - 0.44625
+        - - 0.705
+          - 0.45
+        - - 0.70625
+          - 0.415625
+        - - 0.425
+          - 0.34375
+        - - 0.657
+          - 0.4455
+        - - 0.55625
+          - 0.459375
+        - - 0.2875
+          - 0.371875
+        - - 0.702
+          - 0.441
+        - - 0.702
+          - 0.45
+        - - 0.6225
+          - 0.3225
+        - - 0.459
+          - 0.4455
+        - - 0.441
+          - 0.45
+        - - 0.4752
+          - 0.4428
+        - - 0.435
+          - 0.25875
+        - - 0.39
+          - 0.44625
+        - - 0.6
+          - 0.32625
+        - - 0.504
+          - 0.4455
+        - - 0.486
+          - 0.4536
+        - - 0.255
+          - 0.37125
+        - - 0.495
+          - 0.4545
+        - - 0.3975
+          - 0.27375
+        - - 0.4428
+          - 0.4482
+        - - 0.435
+          - 0.24
+        - - 0.47952
+          - 0.44064
+        - - 0.315
+          - 0.1845
+        - - 0.285
+          - 0.37125
+        - - 0.558
+          - 0.459
+        - - 0.3996
+          - 0.4482
+        - - 0.4968
+          - 0.4428
+        - - 0.44064
+          - 0.44712
+        - - 0.396
+          - 0.4455
+        - - 0.40176
+          - 0.44712
+        - - 0.576
+          - 0.45
+        - - 0.5925
+          - 0.45
+        - - 0.435
+          - 0.2775
+        - - 0.2325
+          - 0.22875
+        - - 0.5724
+          - 0.4536
+        - - 0.4425
+          - 0.33
+        - - 0.621
+          - 0.3195
+        - - 0.55728
+          - 0.4536
+        - - 0.405
+          - 0.2565
+        - - 0.4212
+          - 0.432
+        - - 0.41472
+          - 0.42768
+        - - 0.57024
+          - 0.46656
+        - - 0.549
+          - 0.4365
+        - - 0.54432
+          - 0.43416
+        - - 0.342
+          - 0.4635
+        - - 0.3672
+          - 0.486
+        - - 0.3348
+          - 0.4536
+        - - 0.54432
+          - 0.47304
+        - - 0.594
+          - 0.4374
+        - - 0.432
+          - 0.2376
+        - - 0.6264
+          - 0.324
+        - - 0.3996
+          - 0.243
+        - - 0.3996
+          - 0.27
+        - - 0.49248
+          - 0.23328
+        - - 0.47952
+          - 0.22032
+        - - 0.42768
+          - 0.25272
+        - - 0.50544
+          - 0.22032
+        - - 0.482112
+          - 0.482112
+      keyframe_image: keyframes/anchor_no_parking_zone_01_f005257_t000350_467.jpg
+      frame_index: 5257
+      second: 350.467
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+    scene_anchor_count: 1
+  - id: no_parking_zone_05
+    name: no_parking_zone_05
+    polygon:
+    - - 6
+      - 691
+    - - 628
+      - 775
+    - - 552
+      - 591
+    - - 236
+      - 579
+    - - 22
+      - 610
+    - - 9
+      - 678
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f005311
+    anchor_frame_index: 5311
+    anchor_second: 354.067
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_02_f005311_t000354_067.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: a5a5abeada5454a4
+      hsv_hist:
+      - 0.125215
+      - 0.039766
+      - 0.003613
+      - 0.001367
+      - 0.000371
+      - 0.000332
+      - 0.000195
+      - 2.0e-05
+      - 0.168613
+      - 0.02666
+      - 0.011035
+      - 0.002363
+      - 0.000547
+      - 0.000137
+      - 2.0e-05
+      - 0.0
+      - 0.04541
+      - 0.018574
+      - 0.012539
+      - 0.001582
+      - 0.000273
+      - 3.9e-05
+      - 0.0
+      - 0.0
+      - 0.055937
+      - 0.018828
+      - 0.003242
+      - 0.000254
+      - 2.0e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.093301
+      - 0.091602
+      - 0.079297
+      - 0.031699
+      - 0.001914
+      - 0.000156
+      - 3.9e-05
+      - 0.0
+      - 0.130859
+      - 0.009551
+      - 0.004961
+      - 0.002051
+      - 0.000723
+      - 0.000176
+      - 3.9e-05
+      - 0.0
+      - 0.008789
+      - 0.000234
+      - 5.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.007012
+      - 0.00041
+      - 7.8e-05
+      - 3.9e-05
+      - 3.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 89
+        descriptors:
+        - 1d296e9985fb6012e74dcf058bc637ec68aace9c1f907790c7f58241bacf7cd6
+        - a9ba3a1b69ddb1f5e67ef53c8e95e2f7ed38ca5ef73ffa335fe1226b5a0caff7
+        - 3a3928e87f7f935203ecfc2f1a9c47b0fc99d7c38dbbf0b8535da9ba5b4f5edf
+        - de116e0999df6111e55de7974b9c16fe68a6fe949e997755576b80c3a306fc56
+        - 4b71b0c879d59bda0bec1c2e0cdec7249759f75d874bfad15f5d2fff16a70fff
+        - 3a30264b29fd3152e77dff252addefecc43aff048fb17bb1c77d3093da5f5c5f
+        - 921397a02348b043299df2770e8260deacad648019fb81c090f02a82e900a793
+        - 493bba0ae9f533dcee5dcd2dbc97ebf6c617ee54974bba30db7536fb92472ffb
+        - 8936ab053a723f53bccedef4dcb7c2e7377cff2ca5c5a54a6e4d2f808ee42d75
+        - 0bb9fcf7acdc59bbbbfd76b5ffffd6bf977ff59d9758efe1cffbf5e2a7a4de7f
+        - f792953ce91d54fb9b5fb0fd46ecee9edfc9e424bf6f4a939ad655feda2c8e57
+        - d3a4d3643a420c7fbaaab0f017b7c0b3b7d55da8694f804eb88eafbc21e02321
+        - 6cfa321869ddb1f0e45ef42daed7eaffed38ce5ec72ffa35dfd373eb520d2ff7
+        - 687e620065f873866944ee8dab8e17d46280ce440e2bf6e1d675023b66d74e5e
+        - 3b736ae0767fdbd4096cfcaf3e1da730fc99d76189b370acf35da0b36f9f76fb
+        - e2bb605c69149cb7397ed6fea8aed6f7c7dfff85f55ee7c33638febf47f4de7d
+        - 06f8b7f4ed06bcfb9ffa1061ccfe6d2bd77db723e4459aca8b565fae947425d7
+        - 0f7e61a3f63febf83dea5fe6fd6a9f3d77cb17ffa7d06deefe5eaf84afd703f5
+        - 0b7133e87fd79a5c0fe89c2bbc9ff5209e79df718603aadcfbdd2bbe168f07ff
+        - 3b757be87e77db7c0fecfcae1f9fb730deb9976d89a370dcf2dd29ba5f9b42f9
+        - cb36ee543a563953bdcf96f5dcbf96ff2775ffbcb5cda7ce5e7f7f828ea42f75
+        - 7af0220c4bddb455a16dfe2f4a9c5e76ec95ff81cf1bf3d1776d88db6316be57
+        - 4ef8324829dd3ad8af58f6a9aedde77c8739ff56c60ba2f1d37d11fb528727ff
+        - 7ad3660859dd7135e55da70dca9c56f6e8b4ff91de0bf7d4777982df6306fc56
+        - cbb1f47fafbc799cfbf957b0fddfdefe877ffd55b658aef14ff95deba685c7ff
+        - 62caecdd6f55b9968f7db4aea8adb6ce4ef2af8c857a66f10679dabb979d1cfd
+        - 9a9b67b303ec7917355d76b5ab070659a4bbbd841a9861b5c7ebfac32304a47b
+        - 6ab7704d7490bb2f0a095cafb8399e80961f979d9238e1df6e2daae84f06dbcb
+        - 5dfedd61322f6bb8763a3e605373c93037546ceaab518d17eacf25f4eaf30021
+        - 3bf57b6c7657df780160fdaa1bddb6309eb997efc9b3249f72dd21b877be62f1
+        - 412e1565602e6d3720aafae8b723c033aefe7e88d9d8c16cfc8a7ea000e003a9
+        - cbd97553e3debdb7bd5e36b4ac3e86b5a633df05e5fc74edaf7b5ec247148f7d
+        - dbf2bf9103deb1573e5f96f7bc16829f2f95ee94f7dd35c6dd233ac30a04af7d
+        - 7e332aca35dd53706d4cbf2d0adc3ef4fcb0df77dc0b70dcdb5da2db020f7c77
+        - 2b6172e87f93da7c8fa0bc8abddfb0b43eb9d7edc023acddf3ddabb9779e4ba9
+        - cdf33a1af9d531dcae5d84adbcd7ebf7c653de54a743ba31fb7127fb92942fff
+        - 0f9f69d7b65eefb83d6e77e6dd6e9ff57fc91feef5906dffae5fef84bee709f5
+        - 2fc56bc3f43eefb87566df86d96f9f657fce3fffad906deefe7fafc4a7ff70f5
+        - 0adf64dbdbdf77b77f695e85eefc3654d73ab794f7987fbf6f771487fe549c7f
+        - 4a797248299d5edcaf48bca9ae9ff5748639ff46c603c3f1f37d06bb5697235f
+        - 8a376641b51bfc73fde2f6f4b9cff7a53ffddff1f5fd36ce7e59cfa74fa4eb95
+        - 4b18929ce1f47563b94f5e042cf32edcfdeab38c11dbb2e11336da8a8a64aa57
+        - 63b6ad9c3a7d99de8a5f9cbd9ef6ce36cf53df35af4bee53d8177fbe9c6c0f7d
+        - 2b5b639f6e91af715cc85de678ecb6e45e28134fd5b26ede263caba85faef0f5
+        - 02f0bef46c069c498bb91161fcfe640adf7d7711c04b8ac0091edfae8462218f
+        - 78b9bafa9df05388831dcd08affb6bd8c0fbad511e23fab1cbf18879b207362a
+        - 4fb5edddea7dbd9f8aff9cbddcfede2f0753ff2df341efd16e1b6fbc96f48f75
+        - 298e641134bb680aef25ae8deb2896dcc1866a1c9ea965ff0e7e9051d68f584c
+        - 9bbf7a5ad39db6f7ff4976f738fca6f0bfbb9f91f7fc267f3f6f37c3fb04a95f
+        - cb76e6546bb63957bdcfd6f5199f96fea735ff9db5cdb7c25f7f7aca8e84af7f
+        - 4bf6fe507a3fb877ecff9efd9caff6fea735ff9da4cfa7c25e5f7bd886c4affd
+        - bee0e6130dd940897777a79dc2cc5e9c5988ea140e657f939b549177e30cdc56
+        - 5a6970683f895edc6f28f8e9aedf559096bddf43ca0bc4f9b2fd0ebb5e964b0b
+        - 4bf2a61143f43957b75f9eb7ac97c2fe65b3ff9cf7dff7c35777fec3aac4afff
+        - 4bb0e651e9f4b857af5b5fb108bff66ee73fff9d97dfb3c31f7fdaca8ec4a3df
+        - 0b34f675ffb4b857af7b9eb5adbed66ea737ff9d96c9b3c24e7f1ae28ec4a3df
+        - cb34e6fc6d96f81fbfcb56b779ffb66fc6f5ffadb5ddb7ce46ffda82afa4705f
+        - 813b9bf7208e6f36b88a5664b7f38030066e6c4ed1d8b02be4bc268008b08339
+        - 3abc32bc7bf7926a194df83b6cdc2691fdbfd7b1b6cf10ff3b771bdb530c2fdb
+        - 4bbeb213bbbdb8d7ae5dbebdacbed6fea733ff95970bb6f3df7f3afacb44afff
+        - da1cb39473f4b567bdced6272cbe27e5e633b781e58f32ef73775e8b82542dff
+        - 52ebd48dad1ae88fabb5bac6ece246d667c5eed1c249cfd19cb69f560f36cb8c
+        - 6b3ebe8cbbfd995eaa7d9cbdbebcc6becf17ff15972be5d7d8573afbce4c8f7d
+        - 6bbd38a879dd1ff7896dbcadbeb7a2b6ceb3df44df0b62bdf3d9aabb129eaeff
+        - 46e8d4b7fc8ae88cab99b262ecea4c9aabe7ec9152edcbe18cb6dfc6cd22cb89
+        - 02e1dae07d93eaccafa01c00accb7584b279dff142038addaadd8faf1616298c
+        - 4bb0a6dbcbf43857af5f57b7a8befeeee513ff949759b6d35f5fdacb8ac4adff
+        - b2986e5997f7d153354ff6374a3d264cfdbb9781bebf31d7534f90c3f30cf457
+        - 7adb70ec399d9e770948fce9af9fa634ce3bdf44cc0b60d5f2dd2abb168e87df
+        - 1a0f4a94d3b2bfe6b9ae5ea328eeb6c426ff87e5f49ba4ee3a778e8327f4adcd
+        - 43b4f7f1fce4b847af59dab3bcbf746aef377f9597d993c11f7e9aca84c4a1df
+        - f19df84db63e453f75eedef41321907477be3c2cf9f8750eeaef75943ce87039
+        - b2303efa7db7984e1f0bf13b6cdd2c19ddbb9791beef02ffd3575adbd14d2fdb
+        - 4bbfb2e0bbbdb857af6d9eedacbcd226a737ff159609b5f1de7d3afb86c4875f
+        - 4abb32f3fb9db877af599cafac9fd666a633df15960bb2f5bf5d1efa8e8487df
+        - 02b133eb3b8dbc67ad4998a3acdf74e0a633df85d30992d5bf5c1efa1e06a1df
+        - d97d9be413ce7f72bcc86a447ef72170b6755c6ae185306ef3ef24022830237b
+        - 929ceedb87f4f157575fd7170a9c366d6dbbbf91fefc37d35f6ad6c3b74cf477
+        - 1a1cfbdef3f0b567bdcfdea32cbe26e4e67b9781b58b32ee33775e8ba744a5ff
+        - d858ff7623d875f4b9c626287ed7237722f5fd4261cdb2eaf3eb54032230277b
+        - a7b57143f29beffd7fe17dae1855dcb43e9a167cf3ba7cde2e1c05e66f8ac2f5
+        - 3a9372baffdd11778f4dbcaf2e9ea694eeb3df11972b32d5fb553afbde0e8f7f
+        - 2bdf774f77dbaef45d4878e2687cb4a57e3b96e3e5bb2cfd365e2282579e75fd
+        - dacf2ebe2b945ffc951ed6a7edef2b43eef5ade668076bfdf2f3ea9d36b53c5b
+        - abff735277dba6e5dde878e228dcb4a5be3bd663e5bb24ff3e580fe2479efbbd
+        - aefb7343f39baff47fac7ce668d7e4a53e7816fae3fa2cfe3c1825e2578ee7fd
+        - 5a4f6bae32c23f7634cedee36927b3517ef59de1e89925eff0e7aa8125b62479
+        - 82567e4d6603af7a3d4e76e6794fb7057e7817ece0b425df663a62827fbc65fd
+        - ab30465c5d95a06d5e41741a08d836b5f8299281f77e36d515589a6b5f0cfb84
+        points:
+        - - 0.6125
+          - 0.421875
+        - - 0.575
+          - 0.425
+        - - 0.6875
+          - 0.425
+        - - 0.625
+          - 0.425
+        - - 0.68125
+          - 0.434375
+        - - 0.5925
+          - 0.4275
+        - - 0.425
+          - 0.421875
+        - - 0.55
+          - 0.428125
+        - - 0.43125
+          - 0.434375
+        - - 0.575
+          - 0.440625
+        - - 0.475
+          - 0.425
+        - - 0.4
+          - 0.309375
+        - - 0.57
+          - 0.42375
+        - - 0.6625
+          - 0.41875
+        - - 0.6825
+          - 0.42375
+        - - 0.2
+          - 0.2625
+        - - 0.65
+          - 0.44375
+        - - 0.7125
+          - 0.35
+        - - 0.6825
+          - 0.435
+        - - 0.6975
+          - 0.4275
+        - - 0.435
+          - 0.435
+        - - 0.645
+          - 0.4275
+        - - 0.567
+          - 0.4275
+        - - 0.63
+          - 0.42375
+        - - 0.555
+          - 0.43875
+        - - 0.20625
+          - 0.3125
+        - - 0.43125
+          - 0.30625
+        - - 0.23125
+          - 0.325
+        - - 0.375
+          - 0.3125
+        - - 0.675
+          - 0.423
+        - - 0.3975
+          - 0.31125
+        - - 0.21875
+          - 0.246875
+        - - 0.4275
+          - 0.42375
+        - - 0.621
+          - 0.4185
+        - - 0.684
+          - 0.432
+        - - 0.5475
+          - 0.4275
+        - - 0.7125
+          - 0.34125
+        - - 0.7275
+          - 0.34875
+        - - 0.25625
+          - 0.1875
+        - - 0.5724
+          - 0.4266
+        - - 0.19375
+          - 0.234375
+        - - 0.225
+          - 0.275
+        - - 0.4875
+          - 0.4275
+        - - 0.6975
+          - 0.4125
+        - - 0.645
+          - 0.4425
+        - - 0.31875
+          - 0.271875
+        - - 0.4875
+          - 0.435
+        - - 0.285
+          - 0.435
+        - - 0.255
+          - 0.1875
+        - - 0.432
+          - 0.432
+        - - 0.45
+          - 0.432
+        - - 0.279
+          - 0.432
+        - - 0.57024
+          - 0.42768
+        - - 0.423
+          - 0.423
+        - - 0.432
+          - 0.432
+        - - 0.4536
+          - 0.432
+        - - 0.423
+          - 0.441
+        - - 0.396
+          - 0.3105
+        - - 0.342
+          - 0.4455
+        - - 0.4536
+          - 0.4212
+        - - 0.657
+          - 0.378
+        - - 0.54432
+          - 0.44712
+        - - 0.477
+          - 0.423
+        - - 0.5292
+          - 0.4158
+        - - 0.5616
+          - 0.4482
+        - - 0.675
+          - 0.441
+        - - 0.4212
+          - 0.4212
+        - - 0.36
+          - 0.4365
+        - - 0.53136
+          - 0.41472
+        - - 0.63
+          - 0.378
+        - - 0.44064
+          - 0.43416
+        - - 0.36
+          - 0.1485
+        - - 0.3456
+          - 0.4428
+        - - 0.4752
+          - 0.4266
+        - - 0.47952
+          - 0.4212
+        - - 0.482112
+          - 0.419904
+        - - 0.3996
+          - 0.3078
+        - - 0.378
+          - 0.4266
+        - - 0.6588
+          - 0.3726
+        - - 0.378
+          - 0.2376
+        - - 0.4968
+          - 0.1728
+        - - 0.47952
+          - 0.40176
+        - - 0.49248
+          - 0.28512
+        - - 0.41472
+          - 0.24624
+        - - 0.49248
+          - 0.26568
+        - - 0.50544
+          - 0.24624
+        - - 0.42768
+          - 0.31104
+        - - 0.497664
+          - 0.287712
+        - - 0.42768
+          - 0.3564
+      keyframe_image: keyframes/anchor_no_parking_zone_02_f005311_t000354_067.jpg
+      frame_index: 5311
+      second: 354.067
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+    scene_anchor_count: 1
+  - id: no_parking_zone_06
+    name: no_parking_zone_06
+    polygon:
+    - - 329
+      - 618
+    - - 240
+      - 627
+    - - 191
+      - 654
+    - - 169
+      - 911
+    - - 628
+      - 890
+    - - 633
+      - 670
+    - - 458
+      - 639
+    - - 333
+      - 619
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f002172
+    anchor_frame_index: 2172
+    anchor_second: 144.8
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_06_f002172_t000144_800.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: 8c98b795cccc5627
+      hsv_hist:
+      - 0.098184
+      - 0.017891
+      - 0.003965
+      - 0.00041
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.198105
+      - 0.092676
+      - 0.030059
+      - 0.005332
+      - 0.00125
+      - 0.000352
+      - 2.0e-05
+      - 0.0
+      - 0.03375
+      - 0.049707
+      - 0.06002
+      - 0.024277
+      - 0.005742
+      - 0.00123
+      - 0.000254
+      - 5.9e-05
+      - 0.013125
+      - 0.019941
+      - 0.005078
+      - 0.001445
+      - 0.00043
+      - 0.000117
+      - 0.0
+      - 0.0
+      - 0.012695
+      - 0.033184
+      - 0.100566
+      - 0.006133
+      - 0.000273
+      - 3.9e-05
+      - 0.0
+      - 0.0
+      - 0.128926
+      - 0.002891
+      - 0.001152
+      - 0.000371
+      - 0.000176
+      - 7.8e-05
+      - 9.8e-05
+      - 2.0e-05
+      - 0.024629
+      - 0.000469
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.021582
+      - 0.001895
+      - 0.001035
+      - 0.000234
+      - 2.0e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      orb:
+        count: 91
+        descriptors:
+        - 660ff356f2a9bf33f9af7fe8e8ecb5342673664ab03a2c7f243e20aac7f3c7a5
+        - 27f2e143c33dc7dd3b7f7d7d02d5cf9c9dcac716d336fa121f5c15eecb5ed6f5
+        - 3b5ed14d6b3b565a5dcef8ec2b2687b45feac626eda265aa22de0492fffd42fd
+        - c07139e4280c5931a9888b4cbf534052a2b57d6e4b019345d5f920182882032b
+        - 028ff15ff2b9af8e7b0178eae9689d343fdb22d1b3b82f7f2c3e1e8ad5d3c7ac
+        - 9ffe6352bb5fbffe7afebcfcc8fcdca5bf5fd97ff365bfee3b5a4ffec77787f5
+        - 27bbfb42ea5dbfd91bed75ed08acd73a9f5fd657d57aec201e1d65fec5ffced5
+        - 395ef05d2532d43a55cafc64aa2897ec5b4aa608edee65aa42ff760bfffc789d
+        - d116796c704e4b38314a75587717803536b8442ee9b4211fe3fc208062a14231
+        - 4fa32001b09d6bb8ae681e45ddc6def4b4075dfe9719bd55ee5dabe40a870b75
+        - c13d5964702c7b30380a674c37134071329c5d6a6154b14ff7a920a828814231
+        - ae35e357cb64bfddbbce3c9358fddd3f375f73feb2e3bee26f3887aec7f7f7f3
+        - 59019f640b5e752de5f2e6005f33087b32d47c6a59c1b308d3eb551722f0a022
+        - 0d399f77f24eb6d968c87b4cdff4013bbe7f466bd5f2b868f5ab6700c873abb1
+        - 87da1db8bad994a7ce7890fda6dce4a18f317e43f72d4e7dac126dfa5c088915
+        - eff58532cd7d96cf9bf38918cefc5caf9953f1733f6bdab2bb525d7fcb7f9b96
+        - a87439617ded5156683a6c18169540b18c185418abb4f012e7d92074420956f3
+        - cbe365073a99edb92b7c17eded4edeb72691fdefc644eff56659edb07796077d
+        - 83da1d9bba8dacbbde7910feb4dcd02187317e47f76c4f75ac126ffa1c088915
+        - 586b716d210a4f9d258a4440bf93c1f4167c5dea4a94c06ae1f827a822b28329
+        - a54c6d5dcc56ed58e1f6a5105005973f49c47aeee9677b48573ad41453f176f4
+        - ecfd6b30f2cd5bff72ec40a935dd5231b7fd1575f6daac3e7fcf2de9e58086f3
+        - 2f75e304f25dbbdc5be078cf19ecd7261f6d57fd957afce07e1c2deccfff47f5
+        - 41ecba7d54ade1d6fe1b6608b2f03339d9e87a09ab74f217c5be5304c0784228
+        - bc1cef7f166ad33a5466ffb3733d21697d767d2eb9f4792fe3ef6190f7e954f3
+        - 29fcba5d15ad6196fe166e08b2b11329c9286a0802f8f01dcfaf1001c2785eaa
+        - 39d444347d7f547e55eab06d731d06919984c620edf7511e72db75377b9c5adb
+        - 099f6d65b03e6fb674ee7ec4f92793e55ee65eeee998752ce4ebe6806ef2c178
+        - 8979536d634a6ff4318260e8bf1781b51679146a619ee04ea5fe67a862b423e9
+        - d8e930ed82082fbd60144e20f5d3d072225d7dca42508f61f5a9ae8824b2a728
+        - d0c1be6408425128e084ee0857b30272f0d47c684883b300d3ed411d20a26622
+        - 3c935f73855f74f5f57bf7555b390eb8a986e622ddb4791547ff54076bdeee93
+        - 10253f6c99e75b6ba541e90877f72030d0b349b01b8b7b1df986011db0c3a632
+        - 17fcf340a3578fee3ffa988adffcd5a5bf5f5dfbf969bfeeb9de4ffee575a775
+        - 0ffca75711dcafe4fd4bf306f8fe1ca7ed735fcfefedfeef2d7e8e92491787fc
+        - 654da5478d6cc787ebeabe10d2bc5d2ec9667a0ec961fbe267bed710c37bd6e6
+        - fb3d3776c9fe5b70f9eaa11c7e5e17b9b5fff46fbdcfba6f9bfb59724a0702fe
+        - 8db99f6ff84ef6fce8c07a44fff51132be7f726ad5fa9a686de9270048f3abb1
+        - fe9d727c73f252eb33497eb94bffaef4f7bfb5a22f1aa8bfbaff21cf7be56e17
+        - 9bb568c17656a97b68750f129d16d267661f7bbdf399b5d7ef69aae42684b7f5
+        - 57ed6b2294d76bb021e48f85f346d3b078ea5dfe8e907c2cebcdafe0a4977a6c
+        - 78a5736efac3472920a0e92877f7003012b6686a598be91ff9a601797082a622
+        - d9856c65103e69be75f2ee14f3279a7750c67d2ce8d8750ee3fbe61022e04068
+        - bc3c3f718ded35c6bf3aa4189e9541bd8112dd1213657230c3db1073c259c7b3
+        - 50d597ff996e17afaa332b10f6770873e157682231499b21f1a656168072872a
+        - 7e31f962fd7b56d823f9bd295afd5d3a99def5721b73f980fbdd05ffe37fde63
+        - 8bfb535d619a6e77718a74642a8384b436bc84cae99ea4ef26fd34a22ab46aad
+        - eabea016ebfd90c6bbdfbcbdacfc579faf7bff15a66baaf31f575fbbd7551fdf
+        - e575a156ad7cc685daebbb58f2fc5da2d97e7c4bf962f822adfcc73ac878d23e
+        - 0cd15f73a1df76f4e4332710497328e97952a26a71901b754fcb4745f3f3ec82
+        - b8fc7b7b52c75bf430cc749d7fdd121037fd15d1f8febc3ee9e72de9651026fb
+        - eafea452e9fd99c6bbffb4bd2e9cd7bf8ffbfd15e64feae33f5b5dfbc654dfdf
+        - 23f36210e7dbd7ff79ecfcef0aecd6159a6ad767dcfae69c2a58e5ab67fcd6df
+        - 90081a7f33d87027fd036210aebb20d0a33b8a1034bd006eabf71043e000ad8a
+        - 1dd1da43835cf6b46743bf455bff6ee0f956ea6addb11b326bff45477bfbe813
+        - 8df9936ff14e66fc65c07a44ffd789b43a7e327ad1b8bb6aadf927006ab3e3b9
+        - 27ffc312f481aee47e7978e740ecfca4fdfb06d5df3a1cf73c148fe6dd56b29c
+        - 377de345f65aefde7be878aa19bcd5a43efd17d9c1fab4ea3e3cafa8e7b6d7fd
+        - fc85536fb24a47693500eba8577788f4729ecd6a789a691ff9e4255567a2a660
+        - d8309ef8295c5931a913a4189f170a7b8615dd203805b242c3fb521da0a00f62
+        - c98c6e750d2e4936f537a611f3391673c1c47d2ca8ed710dcffbd01462e0502a
+        - 12fdb165be53cfee77a0982afb3cd520bfff7de3c9fbf9ecb9deefb6e573272d
+        - 6758e9446a585f9669ed7cac583e97760ee577ec855ae668763fe5a8c7f7d6fd
+        - 54ebdce68a4817a9a396a6a96767495333d7ede248458b09f9a76d1d20f2876a
+        - d28d16964380b666bc02e3b36ce320d5a677eac270dd026fb0e25a030144298e
+        - fa3ef61e6bf994cefb5fbdbd2cfee79fa7ebef06a66bbefb135f55bbd3554fdf
+        - 35ff6f6354c74fb0a1ec9fce734f933078f05dffc88a7c3cf989adf025937678
+        - eebef41cfbf99ccfbb57bcbd2cfe679feffbff95b66ffef33b575fbbdf75efdf
+        - d0f0bef0296c5847ab17a5199e9f403b8791f910224f9240d3d1527b80002f0a
+        - ed7d7546dd7fc6b869e0bf485a78ddb799e67c7afd72fdac3fd8457e6bff5224
+        - d08c1ef662ea30a6fc12623076b8205ba3776a0374fd026fd1a3520340612f0a
+        - 3d95574bf5da66f96541eb025b75acf47a9e126a59ba793d3def03447b8be0b0
+        - 6b6beb457258ffd779ec7caa39bcd7723efd37cdc0fae4ea7e3caca867b4d6ed
+        - 5063cca52a0a5ebc22a682ed67634b5236e56de64c42cd28fca3efbd24f20b49
+        - 74c1534fd24a46e93520e3aa537788757adc4ce279936d3dbba2055565a3a620
+        - ca98b6f8cbdd3143bf17a519aebf66dfa73beb10324fb2d29bd3567bd244a77e
+        - 12af9a9adba1b8c78f15e8b32cee6648ef3b8391160b82f75b149e6b914cadce
+        - b5666d47c40fc7f850a2f14a5341993118cc406ee9f67d1e378b653471fb52a0
+        - 3dcd574993db66e865e0efa25b55ace47adc927a59b06dbc3fcd074677abe8a4
+        - c40c9ef7eee834a2f89b6310f6bb007ba377790330fd8a63c7bb5203c071cf03
+        - 1c6ffbe5f68aefd626a478a33b0591007efc07dc4ab8a4eafc8ca7a0e7fb66e9
+        - a565494fd65be6f950e27dca5340bdb538c8027eedb66c3e260825247dfbdaa4
+        - 7c01396e384f43b86220a508f355097010dc6c6a4b22f91df3ed213c70a34620
+        - 25f551e7740fc7b847e0794ed37109341adc126ac9b2591c2d8c05347dbb52b0
+        - 5162c8a7320a4fbc30a48acdf723db5216cd6deec8d6cd2afca4adb42cf30248
+        - 34645347424ba6ec70a27bea736189303adc446a49b2cd2e3484252465bb47a8
+        - d2cc1ebe8ba034edbc13e19365e2285be3d3eae226471b7fb9a35a493111a90a
+        - 35ecce4d143ba6eed6e2e84672e8b521596c426eede35c3e280e4534dd7b5a8c
+        - e820957009ed6007bbb3a0188e93409f819ee8102a7ed2c08dd2507ac244420a
+        - aabff6d0f5b5fc67bf1ffe36a8aab69defbbf791b6ef32f71f5e9aebcf44ef9f
+        - f7ece457cf2b64ae77b6e2de42609d5f79c66aaef8f55ffe3e3ad516ebfdd224
+        points:
+        - - 0.63125
+          - 0.353125
+        - - 0.63125
+          - 0.46875
+        - - 0.7875
+          - 0.478125
+        - - 0.525
+          - 0.3375
+        - - 0.63
+          - 0.3525
+        - - 0.7
+          - 0.359375
+        - - 0.63
+          - 0.46875
+        - - 0.7875
+          - 0.471875
+        - - 0.5375
+          - 0.33125
+        - - 0.63125
+          - 0.33125
+        - - 0.525
+          - 0.3375
+        - - 0.7125
+          - 0.353125
+        - - 0.4875
+          - 0.34875
+        - - 0.29375
+          - 0.490625
+        - - 0.24375
+          - 0.434375
+        - - 0.21875
+          - 0.409375
+        - - 0.55625
+          - 0.34375
+        - - 0.61875
+          - 0.321875
+        - - 0.24375
+          - 0.428125
+        - - 0.675
+          - 0.44625
+        - - 0.71875
+          - 0.2875
+        - - 0.275
+          - 0.434375
+        - - 0.63
+          - 0.468
+        - - 0.4125
+          - 0.428125
+        - - 0.2475
+          - 0.43125
+        - - 0.4125
+          - 0.42375
+        - - 0.675
+          - 0.315625
+        - - 0.375
+          - 0.4125
+        - - 0.69
+          - 0.44625
+        - - 0.66875
+          - 0.44375
+        - - 0.486
+          - 0.3465
+        - - 0.6825
+          - 0.32625
+        - - 0.54
+          - 0.48375
+        - - 0.6975
+          - 0.35625
+        - - 0.275
+          - 0.36875
+        - - 0.7125
+          - 0.28875
+        - - 0.702
+          - 0.3105
+        - - 0.2925
+          - 0.49125
+        - - 0.8
+          - 0.35625
+        - - 0.73125
+          - 0.490625
+        - - 0.63
+          - 0.33
+        - - 0.531
+          - 0.486
+        - - 0.375
+          - 0.4125
+        - - 0.555
+          - 0.345
+        - - 0.4875
+          - 0.48375
+        - - 0.4125
+          - 0.33
+        - - 0.675
+          - 0.4455
+        - - 0.5508
+          - 0.2052
+        - - 0.711
+          - 0.288
+        - - 0.69
+          - 0.33375
+        - - 0.2775
+          - 0.435
+        - - 0.558
+          - 0.2025
+        - - 0.675
+          - 0.4635
+        - - 0.414
+          - 0.4275
+        - - 0.684
+          - 0.3285
+        - - 0.297
+          - 0.4905
+        - - 0.6372
+          - 0.351
+        - - 0.6264
+          - 0.4644
+        - - 0.54
+          - 0.486
+        - - 0.5292
+          - 0.3348
+        - - 0.378
+          - 0.4095
+        - - 0.702
+          - 0.3555
+        - - 0.621
+          - 0.4545
+        - - 0.486
+          - 0.4815
+        - - 0.4212
+          - 0.4266
+        - - 0.5508
+          - 0.216
+        - - 0.621
+          - 0.324
+        - - 0.54432
+          - 0.22032
+        - - 0.53136
+          - 0.33696
+        - - 0.351
+          - 0.4815
+        - - 0.3996
+          - 0.4158
+        - - 0.5724
+          - 0.4914
+        - - 0.6264
+          - 0.4536
+        - - 0.486
+          - 0.4806
+        - - 0.53136
+          - 0.486
+        - - 0.5616
+          - 0.3456
+        - - 0.5832
+          - 0.34992
+        - - 0.44064
+          - 0.42768
+        - - 0.57024
+          - 0.486
+        - - 0.378
+          - 0.4104
+        - - 0.5832
+          - 0.46008
+        - - 0.4536
+          - 0.432
+        - - 0.46656
+          - 0.34992
+        - - 0.44064
+          - 0.324
+        - - 0.47952
+          - 0.47952
+        - - 0.497664
+          - 0.50544
+        - - 0.41472
+          - 0.42768
+        - - 0.46656
+          - 0.42768
+        - - 0.497664
+          - 0.365472
+        - - 0.482112
+          - 0.248832
+        - - 0.497664
+          - 0.614304
+      keyframe_image: keyframes/anchor_no_parking_zone_06_f002172_t000144_800.jpg
+      frame_index: 2172
+      second: 144.8
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    scene_anchors:
+    - schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: 9991b2a2dacb5c2e
+      hsv_hist:
+      - 0.079277
+      - 0.010039
+      - 0.001797
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.19
+      - 0.083555
+      - 0.025273
+      - 0.004688
+      - 0.000977
+      - 0.000195
+      - 0.0
+      - 0.0
+      - 0.038555
+      - 0.063457
+      - 0.084746
+      - 0.036797
+      - 0.011582
+      - 0.002793
+      - 0.000684
+      - 9.8e-05
+      - 0.015039
+      - 0.029355
+      - 0.009199
+      - 0.003047
+      - 0.001113
+      - 0.000352
+      - 9.8e-05
+      - 0.0
+      - 0.017637
+      - 0.037305
+      - 0.12416
+      - 0.005371
+      - 0.000117
+      - 0.0
+      - 2.0e-05
+      - 0.0
+      - 0.095312
+      - 0.002773
+      - 0.001543
+      - 0.000469
+      - 7.8e-05
+      - 2.0e-05
+      - 5.9e-05
+      - 2.0e-05
+      - 0.008809
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.012051
+      - 0.000859
+      - 0.00041
+      - 5.9e-05
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 94
+        descriptors:
+        - 2ff4e003c17de7de3b777d9d0a954e9c19cad21e9332fc323f1c146ecb5fd6f6
+        - 8979532672cc2794b8c060e8bfd7c1313679546e6142ba28e580252800b307f9
+        - a9743b6171ed635268786c1c969540b18418445883b4f012c7c920744a0146f3
+        - 63a5414e7d194aa94bf02d486a68dcb51a88726ed76aefd53e58053c57865a24
+        - 2d5fda5ef085bff9380c7ded7ce7ad101f6b17fed3928a6f6e2f25e8c9f3e391
+        - cbb32501b89d6bb9af7817cdfd46deb796017dfed709bf55ae592bf41a868b75
+        - cbf2741f2a9dbd3dab5c35edefcedeb70601ff4fc744efd5265969b85e94037d
+        - e991714e691d41395168756872d58cb55c9ef66ad932f1111778003a5a8e523d
+        - 2733eb40e87dbfd91bef75fd08acd7389f5dd77f9572ac421e1d3dfec5ffdff5
+        - 65cc2b3d74ade1b6fc7e7608b2f1192dd9e87a6dab74f03fc5be4110507852a8
+        - dc5e2d4e29765712e4ee8eecdb1c87fb44f4fce2ed45f728d3e1e09163f76679
+        - 277da3a5fc7cefd7e8caf846b8feb5a2ec6b56efc533f4ea357cafa88d7ff3dd
+        - 94486be30496ea5075a0f742511b15617aac37eac8b43dcc57e9a300258370a8
+        - 48d9bde52c0c7131ac988a44ff130052a2547d4841499301c5e9621008a2013b
+        - 340d872c510ac2602080ea085331201278c4426a78ab410ef1a40414612b62a0
+        - bc7837718bfd1142ad5ba4189e1500bea113dd1033253237c3db10534205c773
+        - 59813f650b5e7539e510e6005f7708ff36d5fc6879c1310cd3eb530422a2a120
+        - fcfdeb34f2c67bf772cc409935dc5231b7fd1551f6dabc3f7f4f25e8e58086f3
+        - 2d857e5bd5bfe573743b7f1053119c3d691a423a70f8691c678b704563c2eaa2
+        - 87ff1db8ba8994a7ce7890fda69c56818733df51f72d463fac107cfa5c0c991f
+        - fd6c7f760d5f46a8f1f2a618534555fb11e4686e6de5ff0eb3db453462f95a2c
+        - 83bb1cb1be8998afde7990ffb418d22187037fd5f74d4f75ac127bfe1c09890d
+        - 45399f7ee05eb6fc68c86a44dff401babe7f426bd5f2b868b5eb6704c873a3b1
+        - 50253f6c99c7456ba580ef0873f7207130b279a8590b231df982015960a2a62a
+        - 6cede13aed7bc6ac5bfeb909c2ec5d9599cee47f4f62eebf3d5e457fd37fd6ce
+        - 69ec3a557c8d65b77e3e6e08b2b11339896e6a08ca78f31de59f7130407856e8
+        - 58c1ff6c0846512c6584ee085733007270d46ce858abb300d3e9405520a26422
+        - d949fb65025c531063a1a7187717427222d57c4808fcb103d3e9201160a26e2a
+        - 8d40c571240b619afeb222d0d301917b03446e7821f4451ac4ab7104ccb05120
+        - be72775a2bf8a4c4f91ef3f0aed0cdbfea59ce52eae7aee19079729b471defad
+        - f4647e768d5f552df9a6a70873f94f3bb1e4682a6ce7bb0af3eb551d60784e22
+        - 09970d67b03e6dbf34e67ec4f927936556665eace198752ce4ebee848ef2c178
+        - b9f404247d5f54fe55eab06d521c46919980c424ed6f519ffadb75775bbc5adf
+        - 4158be5c45cdf557ee166608b6912339a12862084278b259d5af5208501847aa
+        - 8801c665000a642174b2e350d30310d3208c682c68f44508c4a1630460a040a0
+        - d8745f7028fc5117a95aae389f97883b863dfc1063c5a204c3f9303300d08f63
+        - fc156e3f967a573df1f6f7bb536d1a5338e6ed23fce56d0ee3e3741567fdd452
+        - c13559e4704c6b3878086f7cb793c070328c7c4a4304b10bf5e9202828804331
+        - dc1937788bfd15c3af1fa4180e9765bfa1b3ed10726932d093d3547bd254a773
+        - 58d597ff8b6a17afaa3b2b30f6772873a157e9223141b929f1a6561780728732
+        - cfe52a02349e6bb0ebe48f8cddcedeb5b4245dffe609bcddea598fec0e875364
+        - 9819be7f17db7047fda56610bfb90258a23e480824f8110ecfff1003e2086d8a
+        - 7c85716ef8c347292420e9b85337087052964dea180b691ff9a4205d3283a662
+        - 8df99f6ff84ee6fce0c06b44fff021323e7f726ad5ba9a686de92700e8b3abb8
+        - ca98b6f8cbd91543bf17a599ae9f665fa3b3eb90324fb2d2dbd3567fd244a77e
+        - 7470be640d4e552de0a6ae0857f94b1bb1f56c224ce3b308d3e75519e172ee02
+        - 5d19937fa04e26fc70c06240f7f789f1727e346a41f0fb28a5ee6708e073e3b8
+        - ffb594b2df3d96cffbfbbd194ef84fbe8dd7f113376fdaa2bf5f5d3fcb7d9a87
+        - 9df9d36fb15e66fc77c06340fff789b432fc346ad9f0bd6ea9ec25006ab3e2b8
+        - b8fc6b3a52c75bf430ce549d775d121017fd15d3e8de383ee9e7bde9651226fb
+        - 99842c75343e693e7cf7a614fb279a7755047c2ca8dc750febfbd20002e04178
+        - 78513b6c184c5338608ce30853f30873d0f46c684827f30af3e9215c60a26662
+        - 348d73ebb0e343c21541ff205377a8645b9a17b81bba6936dd8ca240f2cb64e2
+        - 4c357bf822e85d31b84a65389f578879963d5d2a7142f00cc3eb32a902c00731
+        - d82c7875016c5b326106a6181b134273209d6cca6ac7f129d3e9001160816622
+        - ce76545b6a38bcdc7d1ef0f6cccacdddffd9eee2e677efe216737e8f5ff52fb5
+        - 08089aff7bd1b447be836630bc9720f9e33b830040d8025dc7e7520b5200afaa
+        - c98c2c750d2e49367d37a610b339167bc1c47d2ca8e9710dcffbd01442e0506a
+        - f020bc7109ec5122e3b4a618b799401ba3f56810186cd200df8b5579e0004f0a
+        - 7cc771effa0a4f3d2524ffa847478854569ced6a589a691df4e425d536828661
+        - 8dfd536ff0cea6fc74c07b40ffd189b53e7e326ae1b8996f6df927006ab3ebb8
+        - fdf158607c0d43986268b54c5353c93018c8447acb26f91bf7c9217c798b42b1
+        - d2cc1ebe13a23066bc17e2116ce224d3a7b3ea8030cd12efb9e25a430040ad0a
+        - c08e9ef662ea34e6fc126230f6ba205ba377ea0334fd826fd1a352034061ad0a
+        - ea3ea616ebfd90c6bbdfbcbdacfc479fa77bff15a66bbaf31f575fbbd2550fdf
+        - 9dfdd34fb35e66fc77c0ef407b508db432fefc6acdb4bdefabfd05026ab3ea3c
+        - 7ffdb837df7d96ee3bfbbd1deef84e9299cffd537e6bdbb77fdf057feb7fdac7
+        - 2d447545442fc7bc50b2684cd3219d3b5bc4426ee9f47d2c67cb65046dfb52a0
+        - a5a48cb18c2f6d9b16b3a619d3635b0b59ce6abc3ad45b12cf8bf574a8e9c882
+        - fe0c6e3693635f68b0c68f9b736d3b13b9f7dde33ce73d2ff3e3e99165773e52
+        - 65659166892c478c62aaa948d7f349b291d46c6a4943db2af9be653cc0738220
+        - fd8d9dbdb82f4eaf973baa18f773085bd1c77c2c3f495b3febff7554b8f9c00a
+        - aabea4b2e9fdb8c69bff9cbdacfc472b8f7bff11b64feaf39f575ffbd65d1fdf
+        - 7df5f962fc5f57d863e8bd28537ddd3099dc557a9b72f93a7bdd25fdeffb52b3
+        - a567454fd41be7f951e271ca53409db55acc026ee9b66d0e268a25047dbb52a4
+        - 757199e6d86f07c86ae0a908d7774932bddd48f21963f928fd84253cc87303b0
+        - d0c11eba8be414efbc1de11166c22a5be09368927e4b0a75d1a35a5b9011ad02
+        - 7c01396e384d43386220a508f355097010dc6c6a4b22f91de1e9213c72a34620
+        - acac8cf3ac6f649f36bb2619d733411b894e6c1c38fccb22cfcff57580f9d802
+        - 96a697b78222aceb3c9343f2cde2284b375f28a231d58b4a90a65f06a861a381
+        - 25d151cf740f47f847e0e94cd75189345acc026a4932591fa58c253478bb42b0
+        - 9dfd5a5f97df56fe7dc2ec147af8bff53bea966afdf8beffbaff456a6bf5ea8e
+        - 943697f7b22a342f3cb30bf0e772890b37576c3031dd094ea8a67f42ac708129
+        - 50dd95b5bc6b44aefebbaa78f632015b83776c3079c94b3fa8f675168078810b
+        - 7062c827720a4bbc30a460ed7107cb1036cc65ee48d2cd2af484a5a025b30698
+        - 74df91f6aaca46b0baaaab68f6f381f293f76c624953ca2ff8b6651a00730321
+        - 9cdd53dfb3d36eff35c06c607bf7a1f5737e96ea699a28ffbbff070f32f3afbc
+        - 2d757167540fe7f871a0fb4c53591d303edc566ac9b2592e7fcc05346bbb42a0
+        - 40d715f79a2e2fbd3cb38bd4f5670943375768ee71c8596faca67f1088d38138
+        - 6d6d534f550e46f873a8f94852f10db458ec646a49b2d83f3fbc25244bb342a0
+        - 3d67634f751feef875a87f4a5b789da47eec166fc5b26dee367c058467bf7aa5
+        - e8adfa36ddf8d4e7fb97a8192ef85e9a896ee111366b8aa37b7f557bc35cde8a
+        - 14af85bfbcab4eaf37f39be7e7681840dbc36d377ee94fbfe856dfd5bcfe910a
+        - 86f6bfd3a9f5b5dfbfffbe35ccfe6f6bc57bff11b64dfaf2cf575fef9254a5ff
+        points:
+        - - 0.7375
+          - 0.459375
+        - - 0.79375
+          - 0.4375
+        - - 0.65625
+          - 0.334375
+        - - 0.78125
+          - 0.459375
+        - - 0.7425
+          - 0.34125
+        - - 0.73125
+          - 0.31875
+        - - 0.71875
+          - 0.3125
+        - - 0.79375
+          - 0.45625
+        - - 0.7275
+          - 0.46125
+        - - 0.5125
+          - 0.421875
+        - - 0.725
+          - 0.440625
+        - - 0.6625
+          - 0.409375
+        - - 0.55625
+          - 0.4625
+        - - 0.61875
+          - 0.33125
+        - - 0.5625
+          - 0.475
+        - - 0.6525
+          - 0.3375
+        - - 0.585
+          - 0.3375
+        - - 0.38125
+          - 0.43125
+        - - 0.79375
+          - 0.31875
+        - - 0.35
+          - 0.43125
+        - - 0.58125
+          - 0.353125
+        - - 0.35
+          - 0.425
+        - - 0.4
+          - 0.4875
+        - - 0.6375
+          - 0.48
+        - - 0.3125
+          - 0.4
+        - - 0.5175
+          - 0.41625
+        - - 0.585
+          - 0.3375
+        - - 0.603
+          - 0.3375
+        - - 0.58125
+          - 0.478125
+        - - 0.6625
+          - 0.44375
+        - - 0.5775
+          - 0.3525
+        - - 0.475
+          - 0.409375
+        - - 0.78125
+          - 0.3
+        - - 0.5175
+          - 0.42375
+        - - 0.5625
+          - 0.47625
+        - - 0.63
+          - 0.333
+        - - 0.3525
+          - 0.4275
+        - - 0.6225
+          - 0.33
+        - - 0.657
+          - 0.333
+        - - 0.585
+          - 0.47625
+        - - 0.735
+          - 0.31875
+        - - 0.513
+          - 0.4185
+        - - 0.639
+          - 0.477
+        - - 0.3975
+          - 0.4875
+        - - 0.6588
+          - 0.3348
+        - - 0.576
+          - 0.351
+        - - 0.4125
+          - 0.49125
+        - - 0.3225
+          - 0.40875
+        - - 0.414
+          - 0.486
+        - - 0.3825
+          - 0.43125
+        - - 0.4725
+          - 0.40875
+        - - 0.5832
+          - 0.3402
+        - - 0.666
+          - 0.4725
+        - - 0.63
+          - 0.324
+        - - 0.6048
+          - 0.3348
+        - - 0.66
+          - 0.4425
+        - - 0.525
+          - 0.43125
+        - - 0.477
+          - 0.405
+        - - 0.6048
+          - 0.351
+        - - 0.6372
+          - 0.4752
+        - - 0.396
+          - 0.486
+        - - 0.558
+          - 0.4275
+        - - 0.5184
+          - 0.4212
+        - - 0.4968
+          - 0.4104
+        - - 0.648
+          - 0.1944
+        - - 0.4212
+          - 0.486
+        - - 0.315
+          - 0.4005
+        - - 0.54432
+          - 0.42768
+        - - 0.495
+          - 0.378
+        - - 0.378
+          - 0.432
+        - - 0.5184
+          - 0.3564
+        - - 0.4968
+          - 0.3672
+        - - 0.6372
+          - 0.1836
+        - - 0.513
+          - 0.3195
+        - - 0.5616
+          - 0.4266
+        - - 0.5184
+          - 0.3402
+        - - 0.5184
+          - 0.4212
+        - - 0.57024
+          - 0.34344
+        - - 0.4968
+          - 0.378
+        - - 0.49248
+          - 0.40824
+        - - 0.55728
+          - 0.324
+        - - 0.41472
+          - 0.486
+        - - 0.49248
+          - 0.39528
+        - - 0.49248
+          - 0.37584
+        - - 0.5832
+          - 0.47952
+        - - 0.482112
+          - 0.365472
+        - - 0.40176
+          - 0.49896
+        - - 0.50544
+          - 0.31752
+        - - 0.482112
+          - 0.396576
+        - - 0.482112
+          - 0.334368
+        - - 0.482112
+          - 0.303264
+        - - 0.497664
+          - 0.482112
+        - - 0.497664
+          - 0.54432
+        - - 0.497664
+          - 0.676512
+      keyframe_image: keyframes/anchor_no_parking_zone_06_extra_f002207_t000147_133.jpg
+      frame_index: 2207
+      second: 147.133
+      roi_to_anchor_homography:
+      - - 1.0456746739427563
+        - 0.09212044641873847
+        - 36.47327399911577
+      - - -0.08961458824892242
+        - 1.262379394216829
+        - -67.69221300355888
+      - - -0.0001149863575551507
+        - 0.00025239095247226356
+        - 1.0
+      roi_to_anchor_geometry:
+        matches: 39
+        inliers: 25
+        inlier_ratio: 0.641
+        reprojection_error: 1.4898
+    scene_anchor_count: 2
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+  - id: no_parking_zone_07
+    name: no_parking_zone_07
+    polygon:
+    - - 111
+      - 657
+    - - 5
+      - 638
+    - - 9
+      - 913
+    - - 16
+      - 975
+    - - 637
+      - 996
+    - - 634
+      - 671
+    - - 464
+      - 637
+    - - 128
+      - 657
+    - - 121
+      - 661
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f002666
+    anchor_frame_index: 2666
+    anchor_second: 177.733
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_07_f002666_t000177_733.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: de0ca997c8ac909f
+      hsv_hist:
+      - 0.263848
+      - 0.157832
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.034727
+      - 0.002793
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.03168
+      - 0.001758
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.028262
+      - 0.00252
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.163516
+      - 0.212812
+      - 0.026465
+      - 0.000273
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.06877
+      - 0.000859
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.00168
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.001465
+      - 0.000547
+      - 0.000137
+      - 3.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 88
+        descriptors:
+        - 23214149799dc2486b68a94c02c0d4b4982cc24c8762fe1d061c013a5b8b4a94
+        - 23a1e14d5d9f80c85af03048b0d8d4b69948525cc762fe1d0e1c057c592e5a8c
+        - 292128291c1f92684ae0b90d9348173098284267cc22dc1de41d0138592f5a86
+        - 02635825620a3a3128a47aed8d07821036b5c5e44090854cc68720812ea20b91
+        - 68f5534ef06f67fc33a0ed4853f708341cde406a19b2f93f7fac056443f3e6a8
+        - 19515345135ab2606d687b225e1ca4b4329dc66245b1214c31a4000763232f87
+        - 2fadf142f9bd8acf7ba93c4828d8dcb49f5ad119937afef32f5c15eec7c6caad
+        - 6c7d9876c96c479923b3af08d3f3493a91de685a1942db22fbed453c8a73c222
+        - 25f55147d4bfe6fc63e079485370dcb419ca426ad3b27d3f2f9c056c4bfbc2a4
+        - 34757947504f47fd65a06d4873558d341cdc426a49b2793d778c053463bb46a8
+        - 6471196c594f536847a4a10856d50910d898426248235b1cd1d1013e502b46a2
+        - 2d3d114bd9ef47db73a96848d3770db41dfe42385bb2f91f2f9e052ccaf242b0
+        - 4302dba47c20b95289c8b0e6bcabb14bee251f8da10ba0c854b9faa88ce821f9
+        - a7a3e41acd99d4cddbf7b59f2ac8de9fa9cae255be6feef31e5a557fc79cdac4
+        - 187911aa31cd43f02108e849bf130194b4b94c6a4902183df1c420383a130323
+        - 65b59947d92c479c73b3ad08d2734d3e91de607a1b72fb226fbd453ccaf3c220
+        - ac70f6726d1d7fd8fb5f351ddfddfb3f9dc8f77ece67bab1d7d965bdcaffd6f3
+        - 7eee6418dd9dd4efcbfeb48d0ac8de97c9c6ee76de6feef53a58457f730dde56
+        - 0b2342a5700a6a3320c04ac5b903921036ad55accd98854ce40ca8802ca60ad0
+        - 6af52a01d5ddf427294d4f99aa9c1e9488bed1015eb8f0856f559053470edede
+        - 01a079bd7c8de97fcd58b04ebd0a90236e215eade32e76dfcc9b3af81d8803f8
+        - edc49577c92e47bd33bba758d77348fed1d66c3a7954fb22affe557c82f1c020
+        - 28eb2a0f75d9e6e66d057c09ae893694882a824d46b8223d67551009421fdfdc
+        - 6179514279dd4218abe8ad482ad3c5b410ac684e0b03f81d1718013a4a874224
+        - 6d77f74aed1f7ff8e9debd6ccbdddfbf9ed0ff6ec863fae077d965bc46ff56f5
+        - 397913aa71cf42fc2108ed487f5309d432d8c46a4992183db1d520302a932aa9
+        - fd777c6ae80e5ff8e9debd2c5f7fcb33b6d45d6ee923bafcfbd965bc5af36a73
+        - 7ebce450b979dccf8bf7bcad0aec579f8fd7dd35be6ffedf3b5a557fd7fcde56
+        - 2de95962dddfc6ec43a0ad0853d95cb099c8427a4b3258353bcd057c7b3bcaa2
+        - 2eece212d1b87ac63ba5e8892bed5494bdfee0141e7f88623f7f156bc3d6e2ac
+        - eda4c557c97e448a73f3a71cca605dff11c6e81a3d72ffe20ffa557ecaf5ca04
+        - 23b47adc7ea3b2eb5e03f83a38f8bc20ffbb1681b6be0edf1e3ebbebdd487b8b
+        - fbee60506f91dcf8e97eb4bf098cdeb72e91f5e7ec67aef53259e5bf67955edd
+        - 85329f35002e61107cbb2354d713483b854c780eb0f49100c5ab7344c8214321
+        - e6fdfae6fd3bd6ee1fa2fc3bee791e10fbf7cf637ceb49ffbed78f3be77fda0f
+        - 2cbeb3fa68474978359ee51857f7491d5db8772878defa02ddd6d16c82a066fa
+        - 018d1ebfb4abbfefde82da07f4ea2b40fb6b0e2d62a918ffe8aeaf101c5ab18a
+        - 2cef734bf1bff2deebbd7c4d0bed5794bfebc610b2fb087d2fdd0563d3d6cecf
+        - aedff2b5f5fbd6ee7faafeaaebf997b4fbffff73fcfa49ffbeff9797c7fdce0f
+        - 7d757c6eed1e5ff869eebd2c5f7d9b3717d4dd6ee823f9fefbdf65bc7af74271
+        - b10d6965162a6f377402ea82f32991707aee04eeecb8750ee2eda00065f2d628
+        - 2f79f0d0cfdd94c4dbbcb42a289e67adc9bb9250466372f01f51d53b937c0ccf
+        - 998457bfbeaba36b5e43d9b2ffe1a8417b224e293aad4ddff8a627107d48b18b
+        - eda195d5e91d44997bb12758def3c9ff9146687a3950fba08ffa557c8af1ca24
+        - 21a8d8db7cabfac85e33f1fa59e8cc28df992691267e4fff5c9ebbfdd58b6b80
+        - ff6ba444a93d568ee3ffac3d4ae8d7d685c6ec1e8c63efb2ba7d45bfc2f7da45
+        - bcedf2ffdf4bf6ef1fa6fa1b6b791710fbe7cf637cfb59ffffcf873be579d6ca
+        - 3aadfafdf5bbfcef7f86fe9bebe91610ffbfff817cfa59dfffffd713f7f8de8e
+        - 6fb6e416ed3cd4cadbffb5bd4ae8df9f9dc6f517be67eee11a7ad5bfcffddad7
+        - e6e2c5f36c8d4ad83bb3b1dce2cb5c9bdfed7f5e2a76dbf01e9ad5f0c59bd2a0
+        - 86ed7713ba8ba4e4fd3ab275e64a851faf674e6470ed0b7ea81a57d25830838f
+        - 6b69545ced3ddcfdcbb8bc484aa8d7bfc8c2ee6a8d6376f1165a453fdbffca8c
+        - 87ad5f13f28aa4ecb8b2b2f0f4608513aa6f4a7571ff887e2c226f604831a388
+        - 3aa8f6fd75cf78633f87f31bebef1650fbbdef813efe53dfdfffd751d78cc6ca
+        - ac7c915f69fd641a3baa6558fad745bc9d5e720a4376fbf3079e512a5a7942b4
+        - b8add5b5dfcff46f3fa6fa1beb7d00c079ffef2178fb599ffdffd713f77c54ca
+        - acf891df694d49183bbe6558f6d7491fddb8775a2946fb93cffa517812a946f0
+        - 7baef054b93f501773ffb63d2aa0c6bfcdeeec1cbc6fe18a9adf55fbc2ecce4f
+        - fb8fe04c9d79526f53edbc0f2ba8d6b4d8a2ce0c9c2b65df3add857bf7ecde4e
+        - fade6e106f51fde4c176b4bf496c979f2fd1f7e7ec672efd725bd9bf67bc7edf
+        - fd3f9044993d469fe3a9ae5ccab247f680c6ec582d4bf382bbfd053f8af4ca0c
+        - 8d7e1637223e6fba74ba5ff4dd6389af376e662ae1d40f2fc4cf77846af30ba9
+        - 5d7e9455893f44bef7fa865cda73cbff81c4ec2aed45fb2aabdb5514aaf58815
+        - aaa8d6bd75cb7861bf15f21baf8a1499eaadef813efed3f79df7da53d20ce782
+        - dd968f168876a7ba34fe8756d164db6b714668bfb1c7bd2af927efd48871b571
+        - da0f73f6b7ea7fe0bd86db33eeff2141fef7bfc228cd88eef1f68e83a46b252a
+        - 7ef4e4168b70dc8eabf7ad9d4aec5f9e8bd7f9971e67fee11b7eddffe777de56
+        - 9d56af678d76a7b954eedf77517dbbeb7d44fcaeb9f5bd2aebefe584eff7fc73
+        - 593c90e5897c4437a3abae5cff3340d68166ec08794dd382abf715128a648b2a
+        - 5aebdeb72a983eecaab0a78defeb4bd3a6f5efc744419fe8fec34f392eb70b0a
+        - bccddcfd9d6bdeef14a2fe0aef7f11c0f9feffe068ff51afffe7ef1577f8fc8a
+        - dcf4e4678f7a5fb877f68797cb655fef31c6edaefcc5fdaaebebc555a7f5dc56
+        - d38d87bf8db2e4e7b79bc35360ba35cfe9e77ac73dc99be9b972de03a174b80e
+        - 56e1cea70a887ae8aab08389efcb5952b2e57de744419e699ee14f382cb30b02
+        - feb4e0568b7d5ebfb3ffbcbf4afc5fbebdd7fd93fe67fbf3fb5fddffe774de57
+        - 82e896bb7dc97047bf15f219ae9a04dceb3bef5136dec2f78df35a5b500d4f8a
+        - ddec8e17927aafb876f68796d162dbeb3146e8ef2dd5bd2efca3ef05a8711960
+        - fe55e6768d7656f891feb73f4a7c1ffffdd7fdf3fde73ba2fbfbcd97ef7ffc57
+        - 6ba916c4adfd5477e901ac082e3304b680b2ec081d0b12cfbbff1053cac6ca2e
+        - 39a2f27835bd50177f0df61c2a8896b499aa841c9efee093dbdd105be38cce4f
+        - 8d539577a87a6fb8beda77f4df7789df3744fc6eb1c46b64cefb67848af70171
+        - 5c3291e2ad7e47986ba9ad48def3c9f691deec5a0b01fb63b9f5253682770721
+        - df57ed47a83e4fb837feb7e4db678bff1744fceeadc5fff0aefbe794aaf78975
+        - bc7dfb67f25a7ff833ee7fa65b7f9b317fdc97eee9f269beffef65856ffbe6f1
+        - e995744fe13e6eb97d797f56797a9ef57e8776aaf5b87dd57efb62447b86e885
+        - fabd66ecddd3deefd1d4b4bf2bcc3697e8f6dde5fe6ff4cf7b7b85ff772cfe5e
+        - 01e49df17c85695d8eb91144dde37843cf297f1ca35adbd4cd9bbfec9c8801a9
+        - 5f79fd6c3f5c5ad8ef48bc2b3fdfc772a6d1dd708f03f390f3f921bb3eb74e77
+        points:
+        - - 0.68125
+          - 0.459375
+        - - 0.675
+          - 0.453125
+        - - 0.675
+          - 0.46125
+        - - 0.60625
+          - 0.459375
+        - - 0.48125
+          - 0.4625
+        - - 0.6
+          - 0.465625
+        - - 0.675
+          - 0.459
+        - - 0.4375
+          - 0.45625
+        - - 0.465
+          - 0.46875
+        - - 0.46875
+          - 0.46875
+        - - 0.425
+          - 0.46875
+        - - 0.48
+          - 0.46125
+        - - 0.225
+          - 0.884375
+        - - 0.468
+          - 0.468
+        - - 0.725
+          - 0.4625
+        - - 0.435
+          - 0.4575
+        - - 0.7625
+          - 0.559375
+        - - 0.4752
+          - 0.459
+        - - 0.6075
+          - 0.4575
+        - - 0.5925
+          - 0.4575
+        - - 0.20625
+          - 0.871875
+        - - 0.45
+          - 0.45
+        - - 0.6
+          - 0.465
+        - - 0.7
+          - 0.459375
+        - - 0.7575
+          - 0.55875
+        - - 0.7275
+          - 0.46125
+        - - 0.75625
+          - 0.55
+        - - 0.4536
+          - 0.46008
+        - - 0.42
+          - 0.46875
+        - - 0.63125
+          - 0.21875
+        - - 0.432
+          - 0.4545
+        - - 0.7625
+          - 0.584375
+        - - 0.594
+          - 0.4635
+        - - 0.375
+          - 0.459375
+        - - 0.625
+          - 0.53125
+        - - 0.50625
+          - 0.453125
+        - - 0.7625
+          - 0.59375
+        - - 0.625
+          - 0.225
+        - - 0.61875
+          - 0.525
+        - - 0.75
+          - 0.55125
+        - - 0.36875
+          - 0.46875
+        - - 0.625
+          - 0.85625
+        - - 0.7575
+          - 0.5925
+        - - 0.45
+          - 0.4455
+        - - 0.75
+          - 0.58125
+        - - 0.432
+          - 0.4536
+        - - 0.63
+          - 0.5325
+        - - 0.615
+          - 0.525
+        - - 0.423
+          - 0.468
+        - - 0.735
+          - 0.57
+        - - 0.6225
+          - 0.225
+        - - 0.5076
+          - 0.4482
+        - - 0.63
+          - 0.2175
+        - - 0.612
+          - 0.522
+        - - 0.504
+          - 0.45
+        - - 0.63
+          - 0.531
+        - - 0.5025
+          - 0.45
+        - - 0.44064
+          - 0.44064
+        - - 0.50544
+          - 0.44712
+        - - 0.6048
+          - 0.4644
+        - - 0.4428
+          - 0.4428
+        - - 0.63
+          - 0.216
+        - - 0.414
+          - 0.4455
+        - - 0.6048
+          - 0.5238
+        - - 0.369
+          - 0.459
+        - - 0.297
+          - 0.7335
+        - - 0.4212
+          - 0.4698
+        - - 0.369
+          - 0.468
+        - - 0.432
+          - 0.432
+        - - 0.333
+          - 0.4275
+        - - 0.657
+          - 0.5355
+        - - 0.378
+          - 0.459
+        - - 0.315
+          - 0.4455
+        - - 0.3348
+          - 0.4266
+        - - 0.41472
+          - 0.46656
+        - - 0.5832
+          - 0.52488
+        - - 0.3564
+          - 0.4482
+        - - 0.378
+          - 0.4752
+        - - 0.47952
+          - 0.42768
+        - - 0.482112
+          - 0.42768
+        - - 0.3996
+          - 0.2808
+        - - 0.3348
+          - 0.2808
+        - - 0.40176
+          - 0.27864
+        - - 0.54432
+          - 0.27864
+        - - 0.44064
+          - 0.20088
+        - - 0.54432
+          - 0.46008
+        - - 0.40176
+          - 0.7776
+        - - 0.40176
+          - 0.72576
+      keyframe_image: keyframes/anchor_no_parking_zone_07_f002666_t000177_733.jpg
+      frame_index: 2666
+      second: 177.733
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    scene_anchor_count: 1
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+  - id: no_parking_zone_08
+    name: no_parking_zone_08
+    polygon:
+    - - 230
+      - 628
+    - - 7
+      - 669
+    - - 2
+      - 915
+    - - 12
+      - 988
+    - - 626
+      - 744
+    - - 531
+      - 623
+    - - 228
+      - 627
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f003350
+    anchor_frame_index: 3350
+    anchor_second: 223.333
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_08_f003350_t000223_333.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: b636b4e9c852e2b1
+      hsv_hist:
+      - 0.301953
+      - 0.187187
+      - 0.001875
+      - 0.000273
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.014473
+      - 0.009082
+      - 0.008457
+      - 0.000742
+      - 5.9e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.008203
+      - 0.021719
+      - 0.006777
+      - 0.000312
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.008008
+      - 0.03877
+      - 0.005176
+      - 0.000352
+      - 3.9e-05
+      - 3.9e-05
+      - 0.0
+      - 0.0
+      - 0.016426
+      - 0.046953
+      - 0.117617
+      - 0.087695
+      - 0.060469
+      - 0.041387
+      - 0.00623
+      - 0.000215
+      - 0.004785
+      - 0.00127
+      - 0.000332
+      - 0.000391
+      - 0.000547
+      - 0.000156
+      - 0.0
+      - 0.0
+      - 0.000918
+      - 0.000137
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.00084
+      - 9.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      orb:
+        count: 89
+        descriptors:
+        - 54799f6eb26617542c88eb4077770170b6fd5ce241819948f1a52600e8732333
+        - 54719b64224a531820e8a668d797c13236d56cea4991b108d1a1211428a30731
+        - 517d9f6630ae3fb2a888ea44f7f70172a4757cea41c1996df1af2f800873233b
+        - 5c711fe63a4e1770a488eb60d7570972b6f57ce24983990cf1e1271028332333
+        - 5030f9613a49711862a926289717c03236956c300330e100dfe52175e0a00733
+        - 41dc9fff200e6eb7ac0a6a64f5738073c7777c4ae18d936fe4ae768008b0a139
+        - 54719fe7aa461730a0c8c360f7f7097bb6757ce249c1bb08f1e36f9028332733
+        - c1dd1f7fa00e6fb77c0a6a64f773807336667c6ae1d0312de4ab668008f0c129
+        - 5c30bd652a4951186bb92f28d775493a93946c101b60fb10dff76576e0a20723
+        - 6cb49d77ad6d511aebbbab28d775493a81566c101960fb10cdf77176c06b4623
+        - d0599fff224617b8b0cac760f777817b66757d6a69c1b928e1e3678028f32539
+        - 188f57e9b48a6b163f09fec0bf83b07472ae0e1c5b9961ffeefda2c03688e429
+        - d19d5fe7b0ae6fb7740a7e74f733807136263c6af198113fecab62c02880a129
+        - 088b9bf9b4ab69173f05ded0bf83b0405baa6f0c1ab863b3ecfd32d0b688c568
+        - 892219b9a4a9e91f7e157a11bfa3d048cb0b6f1d12bcc3d3ccd5ba68d4c881e9
+        - d45c9f77226e57b8b08ae7607777817b26747c6a69c5b92af3eb651028f32739
+        - 8bbf02935594787155c9d357a81a74c4edab9f9dff9c48df3e5c9ec30e0ef887
+        - 09a699b9b4a96d177f0f7874bf83d040cb2b4f1c12bc43d3ecdd3ec090c881e9
+        - 72b9f0e8ffeddad68be9b8a9aebd54108efbd7559a2bd2f1fbdc0dbbc7ced6db
+        - 49cf5bf9b4ab6d973f0dfe50bf03b070c3aa4e1c3bb861ffeefc36d096d8c169
+        - 7abbfa6c7dfd52d2eb4dfcad2bbdd634cefbd5458e2bf0f1fbfd20fbe7ce56df
+        - acb4b1c37574a2885b19397ee8f8ddacd95aa6119322faf30d5c836edb0f51b7
+        - 019d9ffbb6afac979e195a72fd77a060e73b1f99b3981bffad963ec09cc8a1b9
+        - d90f77cfb4da6f317d48ffe0fb53b47576be1eeae9b82dffe6fba2803f93e029
+        - 72bcf0ece9fddaf6ab69b8a92ebd5632affffd059e2bf2f1db7c1dfbc7cec75f
+        - 5474ff64aa6e57b8b0bea7385777497b37d56dba39c5bb08dbeb6514a0f32773
+        - 0e953afac7d5bcef965add1358fe7ec1fd9bb3a178eb1ad77bcbdf4d9b7ea992
+        - 22b972e87d8ddac4ab29f8ebaebf5410aebbd751923bd0fdbfdc0afa458e039b
+        - efb0e41aa97950d8fff7b5bdcefccebf8f86ee16bd67ffc09ef355ffceccce57
+        - b5ca48a9dc07cad8166ad0d753c9b9685dcc36feaff74fbe7c0fadfcbdbb7890
+        - 53bcf65abbfc5857ef5f96332ebe967fe7b7ff95be4db3f39b7adedb87d4a55f
+        - 293ffc7dba9f7e3bdfe87cadfbfdd764167aff2cc6f86f9f6edf659177fec8fb
+        - 32b973e8768dfa65a920f8caae9e3410bebb5ff1ca3b90fdb9dc8afa4d0a838b
+        - 2b9191cbfd3da0dc5f4979549eb8fcacdd0b061c93a87b82049c107eda4e09bd
+        - 3aed51e83e8fde6d0d20f84a2f8b3490fea957e2582b40fdb2dd8bfa758a428b
+        - 85d3ffe7a2023f98aeda17f6dde7fb6b375d3deec1542f70e2a96f843cf329f1
+        - 03b698f9edadb8579e1b7070bcbe6c2a871b7711b75ed2d3cddf7eea98488b9b
+        - 829ebf9efca7b86f9f0ff231ecfe3459df73bf81b4ef0aff2c3edfd2d448a5df
+        - 42bcf7daefecb847af59ba2bacde5472e7b7ff95960b92f11f3e9edb8506a75f
+        - 72b9f3e87dedfac7ab69b8292ebf5410aebfff15922b92f1bb7c0afbc5c687db
+        - 32ad73eaf5c3df652900f88a2f9f3490febb57f15aab00ffbbdc8afa558ae28b
+        - 12aff5ffb68b7cff7fb07aee6f6f1491bfff7585fad80ffdaefecda26fe4438d
+        - ff32f470eb7d79dabbffb5bdcffcc6bfafd5ff56bd67ffe0dfdb75ffefed4e57
+        - 149e9bebb4ef6bd7164b5b76b777a840773b1718b398593fed873ec098dba1b1
+        - b0cd5aec1ecfce758d20bc0a2f0b3611faa14eea692b50fdb3d98b397d9a4a08
+        - 8b9d77ffbaab783fbd497ff5efff94f5a6bfff84b5f907c7aefa72c26f8481dd
+        - 52b9faeafca4fa47ab09b82b2cde7450eebf7f91922b82f1b93c8efa8506a38b
+        - 020e129d72a0aa73bc035af6ace2a0c4273ba280229d066f1c263ac8bc802989
+        - 0e953cfa9d8593ff571ddd17dcf97a44dd4b3fb9da6b7bf5ebdfcfef9a0ab953
+        - 5630fdf0242e7858a93bb37ade1fdd9ba795fdb3a16589c093fb7b968ee50331
+        - 13adf7f536aa78ff3bb37ae76fee9434b7ff7585bbd88dfdbefedf822de4539d
+        - 328d7aeab6c7de752d00f90a6f5f3410febb17e35aab08fdbbdd8ad3758afeab
+        - b0acfff934436fda57e2f61253b7b1607bdc3fba6aff699aff8fb704b5f874e8
+        - 05b4bbbbb2efbbde3e6b5977f5d76868b71b179f93943937cd873fe49443a5f1
+        - a6cfd4fffc0beead9bb2b0efed6a1d9ffbe77fe364674bfdbcfacfbeddf9d981
+        - 13bf77fff2aff97f3f697bf2fdbe9474a6bf7f85b3d801fd9efafac28cc4a3b9
+        - c38f77dfee8bfc27bf33f3f2fcea9477a6f77f8df1fd03fd343a7ec24d80810d
+        - 26b0f4fbefadf8cb9fbbf1bb8cfe5c0bef9bf795b676cbd09f1adfffd54d8bd7
+        - 1a8996f443c93047ad1162112c9b24dea23beb0056b992e193f052434204af8a
+        - ca9f76ffae9efc37fd4bf7f5efbdb467e637ff04f0ede3e7e6fb76d24e8cc95f
+        - b8a8fffd344b695357a7f612333fb06859bc2f0828fe619adf8fb301f7a874ea
+        - ef38e470eb7df8d2abfbb4bf0bbcd7bfaff7ffd7bc77eae01f5b55ffe7fd4ed7
+        - 72bd72eafd85fb452b09f82a3cde3450febbdfd1922b90ffb93c8afb1506a38b
+        - 5720fcf06c2ef848ab3bb33adc3fdd7ba7957fb590638bc0d7db7bb68c632b03
+        - 3020fbdd64cb61505fa1f7423397b46878bc2e880afe71d9d7afb200618874a0
+        - 01206bd164ebe9527f61d712b99fb46c7ab83f988bf467c0d7d9b280258974e0
+        - c3df76dfae9cfcb7ad5bf3f7eeffbcefe777ff05f3edcbe5b67a5e924edc895d
+        - e7ced49dec1becef9bb2b09fec6a075f6be56ea76467cfc93c3acfbc95f84b8c
+        - 26aaf4dbefe9f8ca8fbfb1bb8cfe5c8befdbff93966fcbf09e1adfffd54d8f83
+        - 4280949beda9b8cf8e33f903ecfa684aeb037b91126bcbd51d36dfff944aad8a
+        - cb7ee4f669fc7c96a9fab67daabed7ffedf7ffc7ac4ff3e0d7fbdebb82f5667f
+        - e63ae4f3edbdf8d6abffb0f9acbed7bbefffffd7a67fcae21f5adfbbc7f54bdf
+        - 369d3cf81de793fa9f7d9d17d4ff6e40dd7f3f31bf6b7bf7fb9f8f7e1808b453
+        - 062ad493ecabb8ceafb3d2d38caa510eeb6f7b9112ffcff00c12dfe28459238c
+        - 46a990abfca9bacbae21fb03ccea6842eb076b91122bcbf11c149f7e944ba182
+        - c340d49d6e0bec2fbfb2f2daecea544f6fe57f0d646dcfc89c3a5f98057c810c
+        - 72a5508affa1bacd0f21b90bacda7c40fe9b5fd1122bc8f7bdbc8bff940aa383
+        - 667ef6f76cadf8c6abdab0e9acfed59beff3ff95866fc2e09e5adfbbc6fd6bdf
+        - 36adf2e8f7a9dac21ba1f88b0bff7510fefb97d19abac8ffbbdc8ffbf5cf7683
+        - 66b9f0caffaddacb0f29b9ab8cfe7c40ff9bdf91922bc8f3be1c8fff954f9113
+        - 68393a740ddd5167ef2dac19aa996210c83aeb00582bd291d3d5103b5208de0a
+        - b8e07ce96c8df9582f14f5039fdb5a53ea9967590a36d3d1d7f9226d758a67c2
+        - 15f353e9360b6ffc6de87aeedf43997036cc167ec3b08d7cfcec27e46dba0331
+        - 3a507ee4365ed97029ec76aa1f1f9735beb1956cc8b031ccd3d9e09367ae5e73
+        - ff5776e7a75affb839eeffa75b7f9ff7fed5bdeeed90edcef6fbef8727ff7e75
+        - 2b79535c7794a6d7794878662898a4b4ae2a824cc3ba36ef361c168a5f94e3bd
+        - bf1665e73e3f4ff855e2bfe65b6dbfe17ec49fefa9b06daef2cfa5942fff5075
+        - 7f1760eeee325e3841eaffe65b6ebff47fc5b7eecd026dca72fda78c37ff7855
+        - bd456ee48f37cfec57a2ee827be93ba17bec33ee68f73d9ef3ebc51577fcf060
+        points:
+        - - 0.71875
+          - 0.43125
+        - - 0.702
+          - 0.4275
+        - - 0.7125
+          - 0.421875
+        - - 0.7125
+          - 0.43125
+        - - 0.684
+          - 0.4275
+        - - 0.7125
+          - 0.4125
+        - - 0.7125
+          - 0.42
+        - - 0.70625
+          - 0.403125
+        - - 0.6825
+          - 0.4275
+        - - 0.68125
+          - 0.428125
+        - - 0.7125
+          - 0.40875
+        - - 0.75625
+          - 0.4875
+        - - 0.7125
+          - 0.39375
+        - - 0.74375
+          - 0.4875
+        - - 0.73125
+          - 0.484375
+        - - 0.705
+          - 0.40125
+        - - 0.68125
+          - 0.884375
+        - - 0.7275
+          - 0.48375
+        - - 0.575
+          - 0.471875
+        - - 0.7425
+          - 0.4875
+        - - 0.56875
+          - 0.465625
+        - - 0.70625
+          - 0.890625
+        - - 0.73125
+          - 0.403125
+        - - 0.78125
+          - 0.4875
+        - - 0.5625
+          - 0.471875
+        - - 0.702
+          - 0.4005
+        - - 0.6875
+          - 0.846875
+        - - 0.57
+          - 0.4725
+        - - 0.425
+          - 0.46875
+        - - 0.8
+          - 0.515625
+        - - 0.53125
+          - 0.471875
+        - - 0.35
+          - 0.484375
+        - - 0.567
+          - 0.4725
+        - - 0.70625
+          - 0.88125
+        - - 0.594
+          - 0.4725
+        - - 0.76875
+          - 0.821875
+        - - 0.7125
+          - 0.4725
+        - - 0.5
+          - 0.484375
+        - - 0.5325
+          - 0.4725
+        - - 0.555
+          - 0.4725
+        - - 0.5616
+          - 0.4698
+        - - 0.3375
+          - 0.49125
+        - - 0.42
+          - 0.46875
+        - - 0.7425
+          - 0.375
+        - - 0.6048
+          - 0.4752
+        - - 0.333
+          - 0.4815
+        - - 0.54
+          - 0.4725
+        - - 0.6372
+          - 0.4266
+        - - 0.6825
+          - 0.8475
+        - - 0.675
+          - 0.46875
+        - - 0.3225
+          - 0.49125
+        - - 0.55728
+          - 0.46656
+        - - 0.6525
+          - 0.7425
+        - - 0.7575
+          - 0.36
+        - - 0.375
+          - 0.495
+        - - 0.315
+          - 0.486
+        - - 0.3456
+          - 0.486
+        - - 0.45
+          - 0.477
+        - - 0.63
+          - 0.4275
+        - - 0.351
+          - 0.477
+        - - 0.648
+          - 0.7425
+        - - 0.423
+          - 0.468
+        - - 0.54
+          - 0.4698
+        - - 0.675
+          - 0.468
+        - - 0.648
+          - 0.7398
+        - - 0.648
+          - 0.729
+        - - 0.3564
+          - 0.4752
+        - - 0.378
+          - 0.495
+        - - 0.4536
+          - 0.4752
+        - - 0.486
+          - 0.486
+        - - 0.396
+          - 0.468
+        - - 0.4212
+          - 0.4698
+        - - 0.684
+          - 0.846
+        - - 0.42768
+          - 0.486
+        - - 0.47952
+          - 0.486
+        - - 0.378
+          - 0.4914
+        - - 0.50544
+          - 0.47304
+        - - 0.41472
+          - 0.46656
+        - - 0.482112
+          - 0.46656
+        - - 0.47952
+          - 0.46656
+        - - 0.6372
+          - 0.4104
+        - - 0.6048
+          - 0.7506
+        - - 0.4536
+          - 0.20088
+        - - 0.5184
+          - 0.7452
+        - - 0.57024
+          - 0.20736
+        - - 0.44064
+          - 0.34344
+        - - 0.49248
+          - 0.59616
+        - - 0.4536
+          - 0.59616
+        - - 0.497664
+          - 0.598752
+      keyframe_image: keyframes/anchor_no_parking_zone_08_f003350_t000223_333.jpg
+      frame_index: 3350
+      second: 223.333
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    scene_anchor_count: 1
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+  - id: no_parking_zone_09
+    name: no_parking_zone_09
+    polygon:
+    - - 161
+      - 690
+    - - 6
+      - 758
+    - - 17
+      - 1002
+    - - 628
+      - 998
+    - - 634
+      - 711
+    - - 509
+      - 654
+    - - 189
+      - 677
+    - - 166
+      - 689
+    dwell_seconds: 2.0
+    cooldown_seconds: 300.0
+    scene_id: scene_f003731
+    anchor_frame_index: 3731
+    anchor_second: 248.733
+    anchor_keyframe_image: keyframes/anchor_no_parking_zone_09_f003731_t000248_733.jpg
+    scene_anchor:
+      schema_version: vehicle-parking-scene-anchor/v2
+      method: phash_hsv_orb_geometry
+      frame_width: 640
+      frame_height: 1280
+      phash: a42d34bf0069f1bb
+      hsv_hist:
+      - 0.2375
+      - 0.240234
+      - 0.007109
+      - 0.005469
+      - 0.005391
+      - 0.000508
+      - 2.0e-05
+      - 0.0
+      - 0.038242
+      - 0.008594
+      - 0.006367
+      - 0.010996
+      - 0.009473
+      - 0.004707
+      - 0.002227
+      - 0.000547
+      - 0.017832
+      - 0.00791
+      - 0.00668
+      - 0.011836
+      - 0.007852
+      - 0.00168
+      - 0.000664
+      - 5.9e-05
+      - 0.019004
+      - 0.00707
+      - 0.001777
+      - 0.00043
+      - 9.8e-05
+      - 5.9e-05
+      - 0.0
+      - 0.0
+      - 0.048828
+      - 0.129922
+      - 0.109687
+      - 0.027012
+      - 0.003965
+      - 0.000898
+      - 0.000332
+      - 0.0
+      - 0.004004
+      - 0.000898
+      - 0.000469
+      - 0.000293
+      - 0.00041
+      - 0.000137
+      - 0.000176
+      - 0.000117
+      - 0.004316
+      - 7.8e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      - 2.0e-05
+      - 0.0
+      - 0.0
+      - 0.006543
+      - 0.000645
+      - 0.000195
+      - 7.8e-05
+      - 0.000156
+      - 3.9e-05
+      - 7.8e-05
+      - 0.000371
+      orb:
+        count: 89
+        descriptors:
+        - 257f61475417cef841e0fa46536895a45ccc16efc9b27dac260ca5846fbf52b4
+        - 750f4605f2226eb830e0cee75161935472e464ee79d24d6e3c2e25842df77a91
+        - 42b2bef0a1fc3817bb1f17358cbf465fa713fd90164c92c2cff75acb8244af1b
+        - c5889fd68cec4098bebaa358f6f3615bc16e681a3b45da32d9bbf75888616822
+        - b5634d27e61a6f9c30ea77ef5364db3b3ecc546eedd4ed0c640be5a425f752f5
+        - c4289ff2ace548caaf9a8058f6f3694bc1737d582b479a71d99adf788871212a
+        - 5ef53e4a7b1d16f9a150ad8c5ed78a779690dc6adf03ba3df3f1013e1a97ae75
+        - f0407e6c0a1e7878a486e7125bcb225b76b4edaa28e79108d3eb721161a06602
+        - ab1c3bd89df7516fdfc38c103a9e2664d9329b00bf8f3adf7b5f961a924cf47e
+        - 1a85aaaa95fdef6d5707dd126be93a24798a930b5ea93cbffb4f9c41f74efce6
+        - 367bfa6653cf92406ae9f96d569c05389c79d5518fa35a205315003bc90b5693
+        - 630d65cffc934c27cd28deebe02bb4774ea63fecfc8b45fc3678a49217ded80d
+        - 49a5197fd02e6bbf72a16e50f7730830114e603833f8d93fedaf3768e8c0cb88
+        - d0b394a5ac2b44bf3e3b925c9733480f8b066c183b7dd1118cd27574c8488109
+        - 93dd37fa95df77f5cd485e467e7d3827ac325f69f5a930edbb580402061ef17f
+        - 29ce614d541eee3e74e87ac6f12094e45c6c126ec5b0752e242ca7804fbe58bc
+        - 21b49d79f8afa3de7e916e48f4730870175b7218b3fa537f6d9e1640c8c003a9
+        - 50ed1e66b84e57b5a0a4ae0977370352e0f56de2480bd92ef3e7651920b2a60a
+        - 188d7bef12c76bb3340d7e02b52720407ebb07d81898313fefedaec0308225fa
+        - 7d6da166954f47ad61e0aa0853705db699c64c7bd963fd2eb9dc057ceb7bd224
+        - e5389e5ae8ac419afa9ba65cf6f3417ec1666a18334dda334dba77788861422a
+        - a1a0adfb4d7d690d567b0510f15d5a6bc90a3b1ca7747b91cfdbd36c9888d1e8
+        - 50850eac90e657b73484ee01f7372250d1f76da0788b512ef9e7be513042a46a
+        - 530072e1240479502d00b6839d1fb46cee911f9c889141c0d7f88ad2378c71a3
+        - c2bd9ebadbe4b9cfbe5d80332cfe6e13a513fb91364b9af13916deef9044a5db
+        - 194e81a7341e4eb654eadac4f36291e0dcec3eeeedf4652fa4aea78024fa702c
+        - f424dea42a2f804bb8a2a259d7a3411abbe56c3028e7910ad0e77314c8610b02
+        - 42109db1a0e47807b91b53b18c3f445be717bd95365cd3c087f2dac38441a553
+        - 01a41c49d0afe1fe7e396e10f4331875190e623833fa535f6dae1744d8c0c3a8
+        - a3afe09ffc938eef56ee5cf7e1e8b68459eab7effc3e4ebf2e2eafa95ffcf8cc
+        - 27cf688fdc93cefd57acdce74168b7845dea96efcea24dff2e0eafbd7ffff8cd
+        - e5c89c17e82d659e7afb2658f621c37f01666c1cb35ccf314c3a7570d8f1c209
+        - 839717cafcafe67dcd195b767679bc21be035f2af3a10bfd3c1824ca5ccaf111
+        - e1db1bf7648cacb4dc0a7276f4d3b449f46e364be1dc827b242afe80181ad1b9
+        - 70cd7b64504e4f313184ee087337007078fc04ea48ba712ff3ad240061b2662a
+        - c1f89d77a88d3597bebb2678b633c07b85766c18735cd331cdb2753088788929
+        - 2fb3e0d1fdfdb95bcf7d3dbf9ddddeacef1bd71d973af6d05f5d33efdf8cdff7
+        - 83c91d9a6de9b9ce8f159018acda724fca0b7f59066f72f18590da7b541981cf
+        - d00096ad002e28033823e211bf32005be2076c8129ddc14291e25a108840230a
+        - 6daecc57f82c47bb72fb6f5cf361da3f116e741ebbfecb226ebf753ceaf9da81
+        - 0bb1a8d3fdfdb15fcf7d3db78dbcdea4cf1ad6149738fed14f5d37efda8cdff7
+        - 0bb778e1f5fdf95b6f6d7cbf9d9dd6a4bf1b9715973874d65f5d3fefdf8cdff7
+        - 80c953b87c816ef6dd0050c2bdc330404aab06c8622a42ff649cae681c98a0a8
+        - c2999ebaf9e4b9ffbe190031bcf7684bc513bb9132499af5ed337ece9044a5fb
+        - c0389ffc69ed31dabe9b2658f6f3617ba17b6a10234dba73ddb3773a88600d3b
+        - 520053e126886841ad01b3028d0b705062911f99022101c094b88a4035882120
+        - 2420ed6b4c69438846b42108d341592bd94c687e0a60fb154d89817cf02b54a2
+        - 26ace04bf43bfaca1b33799b417ddd3cdfda13be92324cf21e5e85efd5eb5284
+        - 82c475b9eee9bc8f8f73b83abc1a4d0b8b036b01736f4bf3a5905e7e1458c5aa
+        - 8448b5bbace929c2de5b5070b4d3694bc36b3f5b33444af185b27a689059a5a3
+        - 65aedc57bcac47bb72bb7e58f361d33b116e641cbafccb226ebf7570c8e9d281
+        - c8879ff3a0ac3c37bc1b4270bdb388cba7337d1832dc8361ccb37ec088c08129
+        - 80ae95b9ac69ad8e8e321870bdbfc14bc7537f11626cc2f184927e3a945885a9
+        - 07ad55cbbe2fcaba4f33b8c4d6689d24df435a7eb320597f2c9c0354dcf30181
+        - c7d317deec04aebddc1ad376f47abc43f6437f6ff0470b7f343aee881c3af1a9
+        - 0a39faf1f5fdf953afcd7ea38d9ff72cefbbd79596bab2c25fdd9aebc7cc7fdf
+        - c1ae9e75a0aa65b7f4bb2670b723c07b03666c1874dcc520ccbb744080d0c909
+        - b0480e9c0ddbb6e6c406e203a2883343e8e0ca436caf46fdb262c21b593c798e
+        - 58891ffc14866930b404c602ff4f304166b13be8698913ddd1ebca0031883528
+        - 002b99fba8ad35178e9b1860b6f7c14ac73b2e181248e270cd967fba90788529
+        - 2bdd629e55d5def4d5455c8728cc36e4c8ea93cfcfaa36ff337c800b7f9efcde
+        - b8c555df5f91e4ee4d00f0022a422cc56a8a82c86aaf46ff36189649571cf88c
+        - 40005ac146a8e941ac11b3029d03604a6a814a98022140c094909a48148b6180
+        - 75f969ea5c05cbc84261a90a53cd7d2058c813fb8b22feb1798d8f7cf5bb76e0
+        - f5688d4a0d6dc788c6f0a508d251492ad9c0687a2b63fb30f18c853cd87b5222
+        - 48bb91ebb88d17158e899e60bcf3e040c63b6f5852084b70ed953eda9a8a8129
+        - ab927cfb3dddd9798f7d95b79d1fbea7ce11df25b76d7ad5c7d9faff168c5df7
+        - 25eb49ead485cbd846016d4e33c1386058ca02fadb327e35688d8068599bf0a0
+        - 023fb5bfacadb5378e9f1969b4ff400ac53b7f11926ac2e0cd927eba904885ab
+        - f2c40e9e09c194ed8c0e801b66d82e43c8a36a616c2f437fb1325e1b5118bd0e
+        - 5dc9136c118e42f86948784cffd288f4b6e95c6ecba3183db1fc21087aa36325
+        - 2e84a29acff0bccfdf175d1368e87eacf92bb395b67a2ef30f5edecbd75efdce
+        - b2c554df1d99c4eddd02b012e2483cc568838ae86eaf47ffb692de137518f98c
+        - 2fa5e14fdd31eeec53e17dc268ecfca45bca93bd97326ffb2e1e8deed7fefae4
+        - 858d1d8bdc2feea85eb02b58d562154157477a7e31785d7e2c0a4754d8ebc100
+        - 8a9234f86dfdf95a8f7fb53d8c1fbeafcf11ff15b76572d5c7dbdaff168d4df7
+        - ce1474f8ed7df81b8f7fb4bf8c9ffeefcf91ff05b667f2d2d7dbdaff96cdcd57
+        - 6e98a49acdf49cce8b579d1bacfc7ecec9d3fb93166bfaf11f77de7f965dbdd6
+        - 55d913ee308c7ef8ad486b44ffd32874b67d6c6a53899a7db1fc234a1803a321
+        - 6fe9e008cd519ececbf59c0b48fc7faec9c3f3d59e63eef03b5dcfff977ffcc6
+        - bec9725adfd1d6ecd74cfc2a6adcbfa4d8fa8662ce232eff335d057b779ffec6
+        - 3f70f0e13f5dfa582ff5b5a38b1fdfbefe99dff58ee3e9c0dfd98bffe78f5fd7
+        - ac48b4daadf95586d71fb430aa9163efc93aec183a6ce2b1c3d3547b925dccaf
+        - 623ebdfcede595238b9fb879befc452bcd737f01b86be2e9d95a7fbbd06857fb
+        - 4f5a7ce46c5e7f30e9fcb7afdf1fd7ff66d5ffefc561fcc0d7f9eb962fa75f55
+        - 6e9abc5aadf91487cf1fbc29aafde7dec332ed101e6beaf1cad754fbd25ccc4f
+        - d628def0f2a27942b996b3934caa371ba7e57d9730c780ecd83acbc685a12302
+        - 83583eb327f9b110ed5d5733ae9c2a6ca221ff5196bc27f5c7d35ac3d60d8557
+        - 9b7322802dbff1538decde2f8e9db284aea0df3d85b521c4d6180af36e8c5d5f
+        points:
+        - - 0.2875
+          - 0.171875
+        - - 0.4125
+          - 0.1
+        - - 0.30625
+          - 0.165625
+        - - 0.34375
+          - 0.134375
+        - - 0.43125
+          - 0.103125
+        - - 0.33125
+          - 0.134375
+        - - 0.225
+          - 0.096875
+        - - 0.33125
+          - 0.165625
+        - - 0.4375
+          - 0.125
+        - - 0.45625
+          - 0.115625
+        - - 0.21875
+          - 0.109375
+        - - 0.45
+          - 0.19375
+        - - 0.35625
+          - 0.125
+        - - 0.34375
+          - 0.146875
+        - - 0.4625
+          - 0.1875
+        - - 0.275
+          - 0.1625
+        - - 0.35
+          - 0.11875
+        - - 0.23125
+          - 0.175
+        - - 0.23125
+          - 0.159375
+        - - 0.38125
+          - 0.1375
+        - - 0.345
+          - 0.135
+        - - 0.435
+          - 0.12375
+        - - 0.21875
+          - 0.171875
+        - - 0.30625
+          - 0.259375
+        - - 0.3
+          - 0.165
+        - - 0.3875
+          - 0.10625
+        - - 0.34375
+          - 0.15625
+        - - 0.315
+          - 0.1725
+        - - 0.3525
+          - 0.12
+        - - 0.285
+          - 0.1725
+        - - 0.2925
+          - 0.18
+        - - 0.36
+          - 0.1425
+        - - 0.45
+          - 0.18375
+        - - 0.4425
+          - 0.19125
+        - - 0.24
+          - 0.16875
+        - - 0.345
+          - 0.14625
+        - - 0.612
+          - 0.513
+        - - 0.4725
+          - 0.39375
+        - - 0.3375
+          - 0.165
+        - - 0.375
+          - 0.13875
+        - - 0.615
+          - 0.5175
+        - - 0.6156
+          - 0.513
+        - - 0.3225
+          - 0.38625
+        - - 0.315
+          - 0.171
+        - - 0.333
+          - 0.1395
+        - - 0.3
+          - 0.25875
+        - - 0.405
+          - 0.1425
+        - - 0.4725
+          - 0.30375
+        - - 0.468
+          - 0.3915
+        - - 0.486
+          - 0.396
+        - - 0.378
+          - 0.1395
+        - - 0.342
+          - 0.1665
+        - - 0.4752
+          - 0.3888
+        - - 0.45
+          - 0.1755
+        - - 0.459
+          - 0.1935
+        - - 0.5832
+          - 0.52488
+        - - 0.36
+          - 0.1575
+        - - 0.36
+          - 0.396
+        - - 0.477
+          - 0.468
+        - - 0.47952
+          - 0.3888
+        - - 0.648
+          - 0.4725
+        - - 0.333
+          - 0.387
+        - - 0.297
+          - 0.2565
+        - - 0.513
+          - 0.468
+        - - 0.414
+          - 0.144
+        - - 0.482112
+          - 0.3888
+        - - 0.486
+          - 0.513
+        - - 0.4752
+          - 0.4698
+        - - 0.47952
+          - 0.37584
+        - - 0.3564
+          - 0.3996
+        - - 0.57024
+          - 0.41472
+        - - 0.5076
+          - 0.486
+        - - 0.3348
+          - 0.3834
+        - - 0.5292
+          - 0.4698
+        - - 0.4536
+          - 0.1782
+        - - 0.47952
+          - 0.51192
+        - - 0.482112
+          - 0.513216
+        - - 0.50544
+          - 0.486
+        - - 0.5724
+          - 0.4104
+        - - 0.5184
+          - 0.46656
+        - - 0.6264
+          - 0.4644
+        - - 0.44064
+          - 0.53136
+        - - 0.4644
+          - 0.3294
+        - - 0.486
+          - 0.3726
+        - - 0.3888
+          - 0.5238
+        - - 0.46656
+          - 0.33048
+        - - 0.40176
+          - 0.36936
+        - - 0.57024
+          - 0.24624
+        - - 0.57024
+          - 0.31104
+      keyframe_image: keyframes/anchor_no_parking_zone_09_f003731_t000248_733.jpg
+      frame_index: 3731
+      second: 248.733
+      roi_to_anchor_homography:
+      - - 1.0
+        - 0.0
+        - 0.0
+      - - 0.0
+        - 1.0
+        - 0.0
+      - - 0.0
+        - 0.0
+        - 1.0
+    scene_anchor_count: 1
+    min_confidence: 0.15
+    scene_match_min_score: 0.6
+    scene_match_min_margin: 0.08
+    geometry_min_matches: 8
+    geometry_min_inliers: 6
+    geometry_min_inlier_ratio: 0.35
+    geometry_max_reprojection_error: 8.0
+    scene_anchors: []
+  roi_last_updated: '2026-07-07T15:24:46'
+  roi_source: legacy_field_capture

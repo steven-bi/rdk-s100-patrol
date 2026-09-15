@@ -1,0 +1,16 @@
+model_name: patrol_v2_yolo11s_garbage_aug_balanced_e120_rect640x320
+target: rdk_s100p
+march: nash-m
+source_pt: external_training_artifact_not_bundled
+source_onnx: external_compile_artifact_not_bundled
+input_shape: 1x3x640x320
+output_shape: 1x10x4200
+classes:
+  0: person
+  1: vehicle
+  2: trash_bin
+  3: garbage
+  4: fire
+  5: smoke
+
+

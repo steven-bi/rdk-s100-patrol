@@ -1,0 +1,34 @@
+schema_version: trash-bin-overflow-site-points/v1
+
+camera:
+  id: front
+  topic: /image_combine_jpeg
+  view: bottom
+  rotation: ccw90
+
+runtime:
+  match_interval_seconds: 0.5
+  record_fps: 15
+  scene_match_min_score: 0.55
+  scene_match_min_margin: 0.05
+  stable_match_count: 2
+  point_cooldown_seconds: 300
+  review_retry_interval_seconds: 10
+  review_worker_idle_seconds: 1
+
+minimax:
+  base_url: https://api.minimaxi.com/v1
+  model: MiniMax-M3
+  api_key_env: MINIMAX_API_KEY
+  timeout_seconds: 2.0
+  service_tier: priority
+  image_detail: low
+  max_long_side_pixel: 960
+  jpeg_quality: 85
+  prompt: 图片中垃圾桶满了吗？如果图片中有多个垃圾桶或者一个垃圾桶有多个桶口，只要其中一个垃圾桶或者其中一个桶口满了就判断为已满，只输出一个词：已满 或 未满。
+
+points:
+  - point_id: trash_01
+    name: 垃圾桶点位1
+    enabled: true
+    anchors: []

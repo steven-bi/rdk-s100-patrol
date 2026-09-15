@@ -1,0 +1,21 @@
+version: 1
+disable_existing_loggers: false
+formatters:
+  standard:
+    format: "%(asctime)s %(levelname)s %(name)s %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: standard
+    level: INFO
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: standard
+    level: INFO
+    filename: runtime/logs/patrol.log
+    maxBytes: 10485760
+    backupCount: 5
+root:
+  handlers: [console, file]
+  level: INFO
+

@@ -1,0 +1,8 @@
+numpy>=1.23
+opencv-contrib-python-headless>=4.8
+Pillow>=9.0
+PyYAML>=6.0
+
+# On RDK S100 these are provided by the board image/runtime rather than pip:
+# rclpy
+# hbm_runtime

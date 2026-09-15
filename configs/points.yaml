@@ -1,0 +1,33 @@
+schema_version: rdk-patrol-points/v1
+
+# The tag IDs below are reserved defaults. Run scripts/tools/register_point.py on site
+# before production. A point with registration_required=true may still use its
+# legacy visual fingerprints, but its AprilTag pose must not be trusted.
+points:
+  - point_id: no_parking_01
+    point_name: 禁停点01
+    enabled: true
+    capabilities: [vehicle_parking]
+    tag:
+      family: tag36h11
+      id: 101
+      size_m: 0.18
+      registration_required: true
+    legacy:
+      vehicle_config: legacy/vehicle_site_rois.yaml
+      legacy_point_id: no_parking_01
+    rois_3d: []
+
+  - point_id: trash_01
+    point_name: 垃圾桶点位1
+    enabled: true
+    capabilities: [trash_review]
+    tag:
+      family: tag36h11
+      id: 201
+      size_m: 0.18
+      registration_required: true
+    legacy:
+      trash_config: legacy/trash_site_points.yaml
+      legacy_point_id: trash_01
+    fingerprints: []

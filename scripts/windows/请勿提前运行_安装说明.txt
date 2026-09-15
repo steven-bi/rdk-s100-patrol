@@ -1,0 +1,15 @@
+这个目录里的脚本不是 1 m、3 m、5 m 采集流程的一部分，不会自动运行。
+
+只能在以下条件全部满足后使用：
+1. 1 m、3 m、5 m 三个距离槽都已通过。
+2. 三点验证助手已生成 valid:true 的 validated YAML。
+3. 已人工复核三点误差、关键帧和会话记录。
+
+正式安装：
+双击“审核并安装GS130W有效标定.cmd”，粘贴 validated YAML 的完整本地路径，先看严格校验摘要，确认后输入 INSTALL。
+
+只做离线检查（不连接板端、不写文件）：
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\Review-And-Install-GS130WValidatedCalibration.ps1" -ValidatedYaml "validated YAML完整路径" -DryRun
+
+安装时会先保留板端 site-config 和 runtime 配置备份，再原子替换；apply-site-config、preflight 或服务检查任一失败时会自动回滚。
+如窗口显示 ROLLBACK_FAILED_MANUAL_RECOVERY_REQUIRED，不要关闭窗口，保留截图和屏幕上的两个备份路径。
